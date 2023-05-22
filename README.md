@@ -2,7 +2,7 @@
 
 Open-access user manual-in-progress 
 
-Please send corrections or suggestions for this book-in-progress to <sdmx.support@ilo.org>, or open an issue or submit a pull request on the GitHub repository at <https://github.com/rajivranj/placeholder>. 
+Please send corrections or suggestions for this book-in-progress to <sdmx.support@ilo.org>, or open an issue or submit a pull request on the GitHub repository at <https://github.com/dingshutong/sdmxc>. 
 Built with <http://bookdown.org> + <https://www.rstudio.com>
 
 ## About the user manual
