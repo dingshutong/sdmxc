@@ -23,7 +23,7 @@
 <meta name="author" content="International Labour Organization: Department of Statistics" />
 
 
-<meta name="date" content="2023-05-17" />
+<meta name="date" content="2023-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -135,7 +135,57 @@
             <section class="normal" id="section-">
 <div id="annotations" class="section level2 hasAnchor" number="5.1">
 <h2><span class="header-section-number">5.1</span> Annotations<a href="annotations.html#annotations" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>We’re working hard on finishing this section. Stay tuned for updates.</p>
+<p>The SDMX Constructor is a powerful tool that supports various types of SDMX artefact annotations, similar to what the .Stat Suite offers (see SDMX annotations supported by the .Stat Suite here: <a href="https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/sdmx-annotations/" class="uri">https://sis-cc.gitlab.io/dotstatsuite-documentation/using-de/sdmx-annotations/</a>).</p>
+<p>Annotations in the SDMX framework are constructs that allow the user or organisation-specific metadata to be included. These annotations can be applied to a wide range of SDMX structural metadata artefacts, offering flexibility and customisation options.</p>
+<p>The main advantage of annotation functionality within the SDMX Constructor is its adaptability. This flexibility is highly advantageous, especially for applications such as dissemination tools where custom metadata is crucial.</p>
+<p>By leveraging the SDMX Constructor’s support for annotations, users can enrich their data with additional information that goes beyond the standardised SDMX elements. These annotations can include context-specific details, explanations, or additional attributes relevant to the specific use case.</p>
+<p><strong>A walkthrough</strong></p>
+<p>For instance, an organisation may annotate a dataset with details about the dimensions to be presented in rows and columns of a presentation table or specify the default filters in the user interface of the dissemination interface. These annotations provide valuable context, enhance the understanding and interpretation of the data, and improve the dissemination tool’s efficiency.</p>
+<p>Take an example within the ILOSTAT (<a href="https://data.ilo.org/" class="uri">https://data.ilo.org/</a>), which is built using .Stat Suite. You can choose the following indicator - Labour force by sex, age and education - here. Note that in the resulting display, there are default filters applied (for example, for ‘Frequency’, it is Annual; for ‘Sex’, it is Total; and for ‘Age’, it is Youth and Adults (15+). Also, in the ‘Table’ view, you may notice that the country names (Reference area) and years (Time period) are in the rows and education levels are in the columns of the table. Such a specific display/interface is a result of the annotation settings.</p>
+<p>You can use the SDMX Constructor (as a back-end tool for the .Stat Suite) to specify such behaviour of loading and displaying data through its annotation functionality. In the SDMX Constructor, annotations are available through all Editor menu items such as Codelist, ConceptScheme, DSD, Dataflow, ConceptConstraint, AgencyScheme, CategoryScheme and MSD. We will see below how it works for the Dataflow as an example. It works similarly for other artefacts. As shown below, Annotations have three main components: Type, Title and Text (in multiple languages - if applicable).</p>
+<p><img src="images/image1.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image1.png">Click here to enlarge the image</a></p>
+<p>By clicking on ‘Standard Types’ on the pop-up, one can choose from the SDMX annotations supported by the .Stat Suite.</p>
+<p><img src="images/image2.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image2.png">Click here to enlarge the image</a></p>
+<p>Once checked/selected and added (for example, in the below image, Default, Layout_Column and Layout_Row are added), one can save the annotation by clicking the Save button.</p>
+<p><img src="images/image3.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image3.png">Click here to enlarge the image</a></p>
+<p>Once saved, one can see the number of annotations displayed on the annotation button (as shown below).</p>
+<p><img src="images/image4.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image4.png">Click here to enlarge the image</a></p>
+<p>If we load the ILOSTAT registry in the SDMX Constructor and select the Dataflow for the Labour force by sex, age and education, we see in-fact 7 annotations (as shown below).</p>
+<p><img src="images/image5.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image5.png">Click here to enlarge the image</a></p>
+<p>Clicking on the Annotations button will show the preselected Types, Titles and Text (in English) relevant to this Dataflow as shown below.</p>
+<p><img src="images/image6.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image6.png">Click here to enlarge the image</a></p>
+<p><strong>Titles</strong></p>
+<p>To manually assign items in the ‘Title’ column of the annotation pop-up window, click on the desired row and click the ‘Select Items’ button. From there, you can choose from the available options, such as EDU for the row: LAYOUT_COLUMN for the ‘Labour force by sex, age, and education’ as shown below.</p>
+<p><img src="images/image7.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image7.png">Click here to enlarge the image</a></p>
+<p>Please be aware that the “Selected Items” button will become active under the circumstance: 1) When a registry is chosen, which permits the potential cross-referencing of artefacts (for example, selecting ILOSTAT), and 2) In the situations listed below:</p>
+<ol style="list-style-type: decimal">
+<li>Codelist Editor: The list of code items of the currently selected code list will be provided for selections. For example, in the image below, the first code list CL_ACTIVITY is double-clicked and then Annotations. After choosing items from ‘Standard Types’, one can choose Titles from the ‘Select Items’ button.</li>
+</ol>
+<p><img src="images/image8.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image8.png">Click here to enlarge the image</a></p>
+<ol start="2" style="list-style-type: decimal">
+<li>ConceptScheme Editor: When you double-click a concept with a code list. The list of code items of the currently selected concept will be provided for selection. Clicking on the Annotations, as shown below, will offer the opportunity to select ‘Standard Types’ and Titles from the ‘Select Items’ button.</li>
+</ol>
+<p><img src="images/image9.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image9.png">Click here to enlarge the image</a></p>
+<ol start="3" style="list-style-type: decimal">
+<li>DSD Editor: The list of Dimensions of the currently selected DSD will be available for selection. Clicking on the Annotations, as shown below, will offer the opportunity to select ‘Standard Types’ and Titles from the ‘Select Items’ button.</li>
+</ol>
+<p><img src="images/image10.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image10.png">Click here to enlarge the image</a></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Dataflow Editor: The list of dimensions of the selected dataflow (the implied DSD) will be available for selection. Clicking on the Annotations, as shown below, will offer the opportunity to select ‘Standard Types’ and Titles from the ‘Select Items’ button.</li>
+</ol>
+<p><img src="images/image11.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image11.png">Click here to enlarge the image</a></p>
+<p>Annotations supported by the SDMX Constructor serve as a powerful tool for driving the display of data. By leveraging annotations’ flexibility and customisation options, users can enhance the user experience and improve data interpretation. The SDMX Constructor’s annotation support is valuable for users seeking to make their data more meaningful, informative, and visually engaging.</p>
 </div>
             </section>
 
