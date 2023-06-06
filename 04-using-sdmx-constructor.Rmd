@@ -218,7 +218,7 @@ knitr::include_graphics("./images/image060.png")
 -	Create an AgencyScheme by entering the ID, AgencyID, Version and Name in the fields as shown below. For this exercise, we will have only Demoland NSO as an agency (all data are from Demoland NSO). We will do it in two stages. First, we will enter the properties for the AgencyScheme and then create the agency. 
 
 
-> **Note on IDs and versions**: All SDMX artefacts, have a unique identifier: In case of AgencySchme these are Agency ID, ID, and Version. Each artefact is assigned a specific version number to keep track of changes and avoid conflicts. This makes sure that the artefacts are managed efficiently and can be easily shared and reused by others while also giving users control over the artefacts they create.
+> **Note on IDs and versions**: In the context of SDMX, it is important to note that the identifiers for all SDMX artefacts follow a specific structure. These identifiers consist of a triplet composed of the "Agency ID," the "ID," and the "Version." It is worth emphasising that this naming convention applies not only to the AgencyScheme but also to other SDMX artefacts. However, unlike other SDMX artefacts that may undergo revisions and updates, the AgencyScheme is a foundational component within the SDMX framework. It defines the agencies or organisations involved in statistical data and metadata exchange, along with their unique identifiers (Agency ID). While the AgencyScheme identifier still follows the triplet structure of "Agency ID, ID, and Version," the version component remains fixed at 1.0. Also, note that a global guideline, ‘Guideline for CL_ORGANIZATION’, describes a method to build and maintain code lists for "organisations" broadly. https://sdmx.org/wp-content/uploads/CL_ORGANISATION-1.0_April_2021.docx.
 
 
 -	For ID, enter AGENCIES; For AgencyID, enter Demoland_NSO; for version, enter 1.0; and for the Name, enter Demoland NSO Agency Scheme as shown below.
@@ -294,9 +294,11 @@ knitr::include_graphics("./images/image080.png")
 
 ## Creating ConceptScheme & Codelist {#creating-conceptscheme}
 
-In the context of SDMX, a ConceptScheme is a structured list of concepts used to define the dimensions and attributes of a dataset. When creating a data model, it's important to identify and define the key concepts that are relevant to the data being collected.
+In the context of SDMX, a ConceptScheme refers to a structured representation of concepts used to classify and describe statistical data and metadata. It serves as a framework or taxonomy for organising and categorising these concepts within the SDMX framework. 
 
-One way to define these concepts is through the use of code lists, which are standardised lists of codes that classify objects based on a specific concept. For example, in a dataset on population demographics, the code list for the concept of sex might include codes such as Men, Women, and Both Sexes (Total). 
+A ConceptScheme provides a standardised and harmonised way of defining relevant concepts to a particular domain or statistical subject area. It helps ensure consistency in interpreting and using these concepts across different datasets and statistical systems.
+
+When Concepts represent a statistical categorical variable (or qualitative variable), they can take on one of a limited and fixed number of possible values. In such a case, the concept is “enumerated”, and its representation is given by a Codelist that contain the valid values that the concept can take on and its meaning. For example, in a dataset on population demographics, the code list for the concept of sex might include codes such as Men, Women, and Both Sexes (Total).
 
 To create Codelists and ConceptSchemes, you can use the SDMX Constructor by following these steps. First, upload the Code List and then the ConceptScheme. By completing these steps in sequence, you can create both artefacts in one go.
 
