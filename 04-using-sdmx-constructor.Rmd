@@ -30,6 +30,44 @@ knitr::include_graphics("./images/image046.png")
 ```
 [Click here to enlarge the image](images/image046.png)
 
+**How to add a new registry to the list**
+
+You can also use the SDMX Constructor to access and view the SDMX artefacts from additional SDMX registries. You can do that by following these steps. 
+
+Click on the Registry button as shown below. It will open up a pop-up window and show the SDMX Registry tab. 
+
+```{r 235, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image235.png")
+```
+[Click here to enlarge the image](images/image235.png)
+
+Clicking the New button will clear the two fields: Registry Name and Base URL. 
+
+```{r 236, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image236.png")
+```
+[Click here to enlarge the image](images/image236.png)
+
+To illustrate further with an example, let's take the case of the Bank for International Settlements (BIS) SDMX registry here: https://stats.bis.org/api-doc/v1
+
+In the fields ‘Registry Name’ and ‘Base URL’, fill in the required details. For the Registry Name, let's write BIS, and for the Base URL, enter https://stats.bis.org/api-doc/v1. Pressing the Save button will result in a confirmation message indicating that the Registry URL is successfully saved, as shown below.
+
+```{r 237, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image237.png")
+```
+[Click here to enlarge the image](images/image237.png)
+
+Click on OK to close the message. 
+
+Now, we can see the SDMX artefacts from the BIS SDMX registry. For instance, you can now click Codelist and select BIS from the ‘Load from Registry’ option. This action will load the code lists from the BIS SDMX registry, as shown below. 
+
+```{r 238, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image238.png")
+```
+[Click here to enlarge the image](images/image238.png)
+
+By accessing the default registries or adding new ones, you can easily access SDMX artefacts from registries, making data retrieval and analysis more efficient and effective.
+
 ## Setting up a registry as a local folder {#setting-up}
 
 You can use the SDMX Constructor to create SDMX artefacts on your computer without a complicated setup. You can start using it with a local folder on your computer. Following are the steps to set up a registry in a computer's local folder.
@@ -81,6 +119,8 @@ knitr::include_graphics("./images/image058.png")
 [Click here to enlarge the image](images/image058.png)
 
 -   The setup with a local folder is complete.
+
+> **Note on folder name** - You can name the folder as you prefer; however, there are some good practices which you can follow. For example, consider using a naming convention like "My_Registry" or "XXX_Reg". Use "LOCAL_XXX" as a consistent naming convention for all local registries if you expect multiple registries, with XXX as a placeholder for differentiation. Also, the folder's name can be different from the registry's name as long as it's clear which set of artefacts it contains. Keep in mind that you can create multiple local registries in different folders.
 
 ## Preparing inputs {#preparing-inputs}
 
