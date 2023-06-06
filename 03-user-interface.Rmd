@@ -59,7 +59,7 @@ Below are the icons representing the menu items (Editor Ribbon) and their functi
 
 | Menu item                  | Names and functions                                                                                                                            |
 |---------------------|---------------------------------------------------|
-| ![](images/image017.png)   | Load from Registry. Select from a dropdown list to load.                                                                                       |
+| ![](images/image017.png)   | ‘Load from Registry’ is the registry selector. It allows users to select from a dropdown list to load a registry. This registry could be a local folder or a local instance (localhost), or an online platform (with SDMX-compliant API).                                                                                       |
 | ![](images/image019.png)   | Refresh the registry.                                                                                                                          |
 | ![](images/image020.png)   | Import. Allows to import an SDMX XML file locally.                                                                                             |
 | ![](images/image021.png)   | Reset the current Editor inputs.                                                                                                               |
