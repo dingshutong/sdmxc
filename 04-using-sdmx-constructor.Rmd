@@ -72,7 +72,9 @@ By accessing the default registries or adding new ones, you can easily access SD
 
 You can use the SDMX Constructor to create SDMX artefacts on your computer without a complicated setup. You can start using it with a local folder on your computer. Following are the steps to set up a registry in a computer's local folder.
 
--   On your computer, create a folder, and let's call it LOCAL_REGISTRY. The screenshot below shows that the folder is created within the C drive.
+-   On your computer, create a folder, and let's call it LOCAL_REGISTRY [^index-6]. The screenshot below shows that the folder is created within the C drive.
+
+[^index-6]: You can name the folder as you prefer; however, there are some good practices which you can follow. For example, consider using a naming convention like "My_Registry" or "XXX_Reg". Use "LOCAL_XXX" as a consistent naming convention for all local registries if you expect multiple registries, with XXX as a placeholder for differentiation. Also, the folder's name can be different from the registry's name as long as it's clear which set of artefacts it contains. Keep in mind that you can create multiple local registries in different folders.
 
 ```{r 048, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image048.png")
@@ -119,8 +121,6 @@ knitr::include_graphics("./images/image058.png")
 [Click here to enlarge the image](images/image058.png)
 
 -   The setup with a local folder is complete.
-
-> **Note on folder name** - You can name the folder as you prefer; however, there are some good practices which you can follow. For example, consider using a naming convention like "My_Registry" or "XXX_Reg". Use "LOCAL_XXX" as a consistent naming convention for all local registries if you expect multiple registries, with XXX as a placeholder for differentiation. Also, the folder's name can be different from the registry's name as long as it's clear which set of artefacts it contains. Keep in mind that you can create multiple local registries in different folders.
 
 ## Preparing inputs {#preparing-inputs}
 
@@ -298,11 +298,68 @@ In the context of SDMX, a ConceptScheme refers to a structured representation of
 
 A ConceptScheme provides a standardised and harmonised way of defining relevant concepts to a particular domain or statistical subject area. It helps ensure consistency in interpreting and using these concepts across different datasets and statistical systems.
 
-When Concepts represent a statistical categorical variable (or qualitative variable), they can take on one of a limited and fixed number of possible values. In such a case, the concept is “enumerated”, and its representation is given by a Codelist that contain the valid values that the concept can take on and its meaning. For example, in a dataset on population demographics, the code list for the concept of sex might include codes such as Men, Women, and Both Sexes (Total).
+When Concepts represent a statistical categorical variable (or qualitative variable), they can take on one of a limited and fixed number of possible values. In such a case, the concept is “enumerated”, and its representation is given by a Codelist that contains the valid values that the concept can take on and its meaning. For example, in a dataset on population demographics, the code list for the concept of sex might include codes such as Men, Women, and Both Sexes (Total).
 
-To create Codelists and ConceptSchemes, you can use the SDMX Constructor by following these steps. First, upload the Code List and then the ConceptScheme. By completing these steps in sequence, you can create both artefacts in one go.
+**Create Codelist: The “one by one” approach.**
 
-**Create Codelist:**
+We can create a Concept Scheme in SDMX Consctuctor by following the steps described below. This section describes the one-by-one entry approach that is also possible, though the subsequent section illustrates the bulk load feature in detail.
+
+- Click on the ConceptScheme button in the Editor menu. Then click the ‘Add New Concept’ button in the Editor Ribbon menu, as shown below.
+
+```{r 239, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image239.png")
+```
+[Click here to enlarge the image](images/image239.png)
+
+- The resulting pop-up window would look like the following.
+
+```{r 240, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image240.png")
+```
+[Click here to enlarge the image](images/image240.png)
+
+- Provide the details as per the template. As an example, we choose the concept of ‘indicator’. Hence we could use ID = INDICATOR and Name = Indicator. For Description, we could use ‘Refers to statistical measure describing a particular aspect of a social, economic or environmental phenomenon’. We could keep the checkmark to add the code list (this would allow us to add the code list in the same interface), as shown below.  
+
+```{r 241, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image241.png")
+```
+[Click here to enlarge the image](images/image241.png)
+
+- Now, we have three options to add the code list. Option 1 is to 'Import Codelist from Registry', Option 2 is to ‘Upload Codelist from Local files', and below these options, as you can see in the image below, is the option to create a code list from scratch.
+
+- We create the code list from scratch in the next step. We could use ID = CL_INDICATOR, Agency ID = DEMOLAND_NSO, Version = 1.0 and Name = Indicator
+
+- We add two items to the code list for illustration purposes. ID = UNER, Name: Unemployment Rate and ID = POLF, Name = Population outside the labour force in two rows. Use the Append or + button to add multiple rows, as highlighted below.
+
+```{r 242, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image242.png")
+```
+[Click here to enlarge the image](images/image242.png)
+
+- Click the Apply button (as highlighted below).
+
+```{r 243, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image243.png")
+```
+[Click here to enlarge the image](images/image243.png)
+
+- After clicking the Apply button, we will see the concept added in the CONCEPT POOL pane, as shown below.
+
+```{r 244, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image244.png")
+```
+[Click here to enlarge the image](images/image244.png)
+
+- Double-clicking on the concept scheme will open up the pop-up window, as shown below. This time, clicking ‘Save as SDMX - ML’ (other options are also available), as shown below, will start the standard process of saving the artefact in a local folder for later use.
+
+```{r 245, echo=FALSE, fig.align="center", out.width="100%"}
+knitr::include_graphics("./images/image245.png")
+```
+[Click here to enlarge the image](images/image245.png)
+
+**Create Codelist: Bulk load.**
+
+To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Constructor by following these steps. First, upload the Code List and then the ConceptScheme. By completing these steps in sequence, you can create both artefacts in one go.
 
 -	Click on the Codelist button on top and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the Codelist Editor’s ‘Load from registry’ dropdown option, as shown below.
 
