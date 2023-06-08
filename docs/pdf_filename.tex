@@ -77,7 +77,7 @@
 
 \title{SDMX Constructor: User Manual}
 \author{International Labour Organization: Department of Statistics}
-\date{2023-06-07}
+\date{2023-06-08}
 
 \begin{document}
 \maketitle
@@ -1246,9 +1246,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
 
 In SDMX, a Data Structure Definition (DSD) is used to organise data in a specific format. Represented as a cube, a DSD is made up of dimensions and attributes. A Dataflow, on the other hand, represents a specific portion or filtered view of the cube that the DSD represents. A Content Constraint specifies the permitted code list and codes for a particular Dataflow.
 
-In SDMX Constructor, the Table Modeller feature provides an intuitive user interface for designing statistical tables and generating the corresponding SDMX artefacts.
+In SDMX Constructor, the Table Modeller feature (Under special topics, the functionality of the \protect\hyperlink{table-modeller}{Table Modeller} is detailed) provides an intuitive user interface for designing statistical tables and generating the corresponding SDMX artefacts in one go.
 
-Recalling our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:table42}), we will now generate DSDs, ContentConstraints and Dataflows. We can create all these artefacts through the \protect\hyperlink{table-modeller}{Table Modeller} option in the SDMX Constructor.
+Recalling our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:table42}), we will now generate DSDs, ContentConstraints and Dataflows. We can create all these artefacts through the Table Modeller option in the SDMX Constructor.
 
 \begin{itemize}
 \tightlist
@@ -1395,13 +1395,10 @@ Recalling our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:t
 
 A CategoryScheme groups similar objects based on shared characteristics, providing a hierarchical structure that helps classify and organise data and metadata meaningfully.
 
-Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:table42}), we will create a CategoryScheme using the Table Modeller option in the SDMX Constructor. The categorisation could be by topics such as `Unemployment Rate' and `Population outside the labour force'.
+It is crucial to distinguish between topics and specific indicators within those topics. For instance, in this user manual, we have used two indicators as examples: `Unemployment Rate by sex and region' and `Population outside the labour force by sex and age group.' Although these indicators focus on different aspects, they both fall under the broader topic of the Labour force.
 
-\begin{itemize}
-\tightlist
-\item
-  First, we will click the CategoryScheme button and enter the properties (ID: CAS\_BY\_TOPIC, AgencyID: DEMOLAND\_NSO, Version: 1.0 and Name: Categorisation Scheme By Topic) as shown below.
-\end{itemize}
+Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:table42}), we will create a CategoryScheme in the SDMX Constructor. The categorisation would be by the topic `Labour force'.
+- First, we will click the CategoryScheme button and enter the properties (ID: CAS\_BY\_TOPIC, AgencyID: DEMOLAND\_NSO, Version: 1.0 and Name: Categorisation Scheme By Topic) as shown below.
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image160} \end{center}
 
@@ -1420,7 +1417,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  It will open a pop-up window, as shown below. Enter the details: ID: UNER (shorthand for Unemployment Rate) and Name: Unemployment Rate.
+  It will open a pop-up window, as shown below. Enter the details: ID: LF (shorthand for Labour force), Name: Labour force and Description: The labour force is the sum of the number of persons employed and the number of persons unemployed.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image164} \end{center}
@@ -1430,7 +1427,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Click on the Load ``Dataflows'' button, as shown below.
+  Click on the Load ``Dataflows'' button, as shown below. It will open another pop-up window to select the dataflows through the Registry.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image166} \end{center}
@@ -1440,7 +1437,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  It will open another pop-up window to select the dataflow through the Registry.
+  Select the Registry (LOCAL\_REGISTRY), then the dataflows, and press Apply as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image168} \end{center}
@@ -1450,7 +1447,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Select the Registry (LOCAL\_REGISTRY), then the dataflow, and press Apply as shown below.
+  The resulting window will show the two dataflows in the dataflow pool, as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image170} \end{center}
@@ -1460,7 +1457,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  A message will appear as shown below.
+  Select both the dataflows and move (by dragging and dropping) to the Attached Dataflows pane on the right, as shown below. Click on Apply.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image172} \end{center}
@@ -1470,7 +1467,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Clicking the OK button will lead you to the following window.
+  Clicking ``Apply'' in the previous step will take you to the following window, showing the entry into the CATEGORY POOL.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image174} \end{center}
@@ -1480,7 +1477,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  As shown below, move (dragging and dropping) the dataflow to the `attached dataflows' space.
+  Move it to the right pane, as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image176} \end{center}
@@ -1490,7 +1487,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Clicking ``Apply'' in that pop-up will take you to the following window, showing the entry into the CATEGORY POOL.
+  Then hit Save (Save without descendants), and it will show the pop-up windows to ensure the location where it saves the file, as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image178} \end{center}
@@ -1500,7 +1497,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Move it to the right pane, as shown below.
+  Clicking on Save will ask the confirmation to merge the file. Select Yes.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image180} \end{center}
@@ -1510,34 +1507,12 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Then hit Save (Save without descendants), and it will show the pop-up windows to ensure the location where it saves the file, as shown below.
+  The XML file (by going to the location of the folder we created before and opening the XML file) would be like the one below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image182} \end{center}
 
 \href{images/image182.png}{Click here to enlarge the image}
-
-\begin{itemize}
-\tightlist
-\item
-  Clicking on Save will ask the confirmation to merge the file. Select Yes.
-\item
-  Repeat the process for the other category, `Population outside the labour force'. The final view would be as follows:
-\end{itemize}
-
-\begin{center}\includegraphics[width=1\linewidth]{./images/image184} \end{center}
-
-\href{images/image184.png}{Click here to enlarge the image}
-
-\begin{itemize}
-\tightlist
-\item
-  The XML file (by going to the location of the folder we created before and opening the XML file) would be like the one below.
-\end{itemize}
-
-\begin{center}\includegraphics[width=1\linewidth]{./images/image186} \end{center}
-
-\href{images/image186.png}{Click here to enlarge the image}
 
 \hypertarget{uploading-xml}{%
 \section{Uploading XML file to the DLM}\label{uploading-xml}}

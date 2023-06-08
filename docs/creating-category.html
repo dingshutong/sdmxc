@@ -23,7 +23,7 @@
 <meta name="author" content="International Labour Organization: Department of Statistics" />
 
 
-<meta name="date" content="2023-06-07" />
+<meta name="date" content="2023-06-08" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,10 +136,9 @@
 <div id="creating-category" class="section level2 hasAnchor" number="4.7">
 <h2><span class="header-section-number">4.7</span> Creating CategoryScheme<a href="creating-category.html#creating-category" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>A CategoryScheme groups similar objects based on shared characteristics, providing a hierarchical structure that helps classify and organise data and metadata meaningfully.</p>
-<p>Referencing our two initial tables (Table: <a href="preparing-inputs.html#tab:table41">4.1</a> and Table: <a href="preparing-inputs.html#tab:table42">4.2</a>), we will create a CategoryScheme using the Table Modeller option in the SDMX Constructor. The categorisation could be by topics such as ‘Unemployment Rate’ and ‘Population outside the labour force’.</p>
-<ul>
-<li>First, we will click the CategoryScheme button and enter the properties (ID: CAS_BY_TOPIC, AgencyID: DEMOLAND_NSO, Version: 1.0 and Name: Categorisation Scheme By Topic) as shown below.</li>
-</ul>
+<p>It is crucial to distinguish between topics and specific indicators within those topics. For instance, in this user manual, we have used two indicators as examples: ‘Unemployment Rate by sex and region’ and ‘Population outside the labour force by sex and age group.’ Although these indicators focus on different aspects, they both fall under the broader topic of the Labour force.</p>
+<p>Referencing our two initial tables (Table: <a href="preparing-inputs.html#tab:table41">4.1</a> and Table: <a href="preparing-inputs.html#tab:table42">4.2</a>), we will create a CategoryScheme in the SDMX Constructor. The categorisation would be by the topic ‘Labour force’.
+- First, we will click the CategoryScheme button and enter the properties (ID: CAS_BY_TOPIC, AgencyID: DEMOLAND_NSO, Version: 1.0 and Name: Categorisation Scheme By Topic) as shown below.</p>
 <p><img src="images/image160.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image160.png">Click here to enlarge the image</a></p>
 <ul>
@@ -148,66 +147,55 @@
 <p><img src="images/image162.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image162.png">Click here to enlarge the image</a></p>
 <ul>
-<li>It will open a pop-up window, as shown below. Enter the details: ID: UNER (shorthand for Unemployment Rate) and Name: Unemployment Rate.</li>
+<li>It will open a pop-up window, as shown below. Enter the details: ID: LF (shorthand for Labour force), Name: Labour force and Description: The labour force is the sum of the number of persons employed and the number of persons unemployed.</li>
 </ul>
 <p><img src="images/image164.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image164.png">Click here to enlarge the image</a></p>
 <ul>
-<li>Click on the Load “Dataflows” button, as shown below.</li>
+<li>Click on the Load “Dataflows” button, as shown below. It will open another pop-up window to select the dataflows through the Registry.</li>
 </ul>
 <p><img src="images/image166.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image166.png">Click here to enlarge the image</a></p>
 <ul>
-<li>It will open another pop-up window to select the dataflow through the Registry.</li>
+<li>Select the Registry (LOCAL_REGISTRY), then the dataflows, and press Apply as shown below.</li>
 </ul>
 <p><img src="images/image168.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image168.png">Click here to enlarge the image</a></p>
 <ul>
-<li>Select the Registry (LOCAL_REGISTRY), then the dataflow, and press Apply as shown below.</li>
+<li>The resulting window will show the two dataflows in the dataflow pool, as shown below.</li>
 </ul>
 <p><img src="images/image170.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image170.png">Click here to enlarge the image</a></p>
 <ul>
-<li>A message will appear as shown below.</li>
+<li>Select both the dataflows and move (by dragging and dropping) to the Attached Dataflows pane on the right, as shown below. Click on Apply.</li>
 </ul>
 <p><img src="images/image172.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image172.png">Click here to enlarge the image</a></p>
 <ul>
-<li>Clicking the OK button will lead you to the following window.</li>
+<li>Clicking “Apply” in the previous step will take you to the following window, showing the entry into the CATEGORY POOL.</li>
 </ul>
 <p><img src="images/image174.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image174.png">Click here to enlarge the image</a></p>
 <ul>
-<li>As shown below, move (dragging and dropping) the dataflow to the ‘attached dataflows’ space.</li>
+<li>Move it to the right pane, as shown below.</li>
 </ul>
 <p><img src="images/image176.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image176.png">Click here to enlarge the image</a></p>
 <ul>
-<li>Clicking “Apply” in that pop-up will take you to the following window, showing the entry into the CATEGORY POOL.</li>
+<li>Then hit Save (Save without descendants), and it will show the pop-up windows to ensure the location where it saves the file, as shown below.</li>
 </ul>
 <p><img src="images/image178.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image178.png">Click here to enlarge the image</a></p>
 <ul>
-<li>Move it to the right pane, as shown below.</li>
+<li>Clicking on Save will ask the confirmation to merge the file. Select Yes.</li>
 </ul>
 <p><img src="images/image180.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image180.png">Click here to enlarge the image</a></p>
 <ul>
-<li>Then hit Save (Save without descendants), and it will show the pop-up windows to ensure the location where it saves the file, as shown below.</li>
+<li>The XML file (by going to the location of the folder we created before and opening the XML file) would be like the one below.</li>
 </ul>
 <p><img src="images/image182.png" width="100%" style="display: block; margin: auto;" />
 <a href="images/image182.png">Click here to enlarge the image</a></p>
-<ul>
-<li>Clicking on Save will ask the confirmation to merge the file. Select Yes.</li>
-<li>Repeat the process for the other category, ‘Population outside the labour force’. The final view would be as follows:</li>
-</ul>
-<p><img src="images/image184.png" width="100%" style="display: block; margin: auto;" />
-<a href="images/image184.png">Click here to enlarge the image</a></p>
-<ul>
-<li>The XML file (by going to the location of the folder we created before and opening the XML file) would be like the one below.</li>
-</ul>
-<p><img src="images/image186.png" width="100%" style="display: block; margin: auto;" />
-<a href="images/image186.png">Click here to enlarge the image</a></p>
 </div>
             </section>
 

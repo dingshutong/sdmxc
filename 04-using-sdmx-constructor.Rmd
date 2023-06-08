@@ -530,9 +530,9 @@ knitr::include_graphics("./images/image129.png")
 
 In SDMX, a Data Structure Definition (DSD) is used to organise data in a specific format. Represented as a cube, a DSD is made up of dimensions and attributes. A Dataflow, on the other hand, represents a specific portion or filtered view of the cube that the DSD represents. A Content Constraint specifies the permitted code list and codes for a particular Dataflow. 
 
-In SDMX Constructor, the Table Modeller feature provides an intuitive user interface for designing statistical tables and generating the corresponding SDMX artefacts.
+In SDMX Constructor, the Table Modeller feature (Under special topics, the functionality of the [Table Modeller](#table-modeller) is detailed) provides an intuitive user interface for designing statistical tables and generating the corresponding SDMX artefacts in one go.
 
-Recalling our two initial tables (Table: \@ref(tab:table41) and Table: \@ref(tab:table42)), we will now generate DSDs, ContentConstraints and Dataflows. We can create all these artefacts through the [Table Modeller](#table-modeller) option in the SDMX Constructor.
+Recalling our two initial tables (Table: \@ref(tab:table41) and Table: \@ref(tab:table42)), we will now generate DSDs, ContentConstraints and Dataflows. We can create all these artefacts through the Table Modeller option in the SDMX Constructor.
 
 -	Click on the Table Modeller button on top and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the Table Modeller Editor’s ‘Load from registry’ dropdown option, as shown below.
  
@@ -637,8 +637,9 @@ knitr::include_graphics("./images/image158.png")
 
 A CategoryScheme groups similar objects based on shared characteristics, providing a hierarchical structure that helps classify and organise data and metadata meaningfully.
 
-Referencing our two initial tables (Table: \@ref(tab:table41) and Table: \@ref(tab:table42)), we will create a CategoryScheme using the Table Modeller option in the SDMX Constructor. The categorisation could be by topics such as ‘Unemployment Rate’ and ‘Population outside the labour force’. 
+It is crucial to distinguish between topics and specific indicators within those topics. For instance, in this user manual, we have used two indicators as examples: 'Unemployment Rate by sex and region' and 'Population outside the labour force by sex and age group.' Although these indicators focus on different aspects, they both fall under the broader topic of the Labour force. 
 
+Referencing our two initial tables (Table: \@ref(tab:table41) and Table: \@ref(tab:table42)), we will create a CategoryScheme in the SDMX Constructor. The categorisation would be by the topic ‘Labour force’. 
 -	First, we will click the CategoryScheme button and enter the properties (ID: CAS_BY_TOPIC, AgencyID: DEMOLAND_NSO, Version: 1.0 and Name: Categorisation Scheme By Topic) as shown below.
  
 ```{r 160, echo=FALSE, fig.align="center", out.width="100%"}
@@ -653,90 +654,76 @@ knitr::include_graphics("./images/image162.png")
 ```
 [Click here to enlarge the image](images/image162.png)
 
--	It will open a pop-up window, as shown below. Enter the details: ID: UNER (shorthand for Unemployment Rate) and Name: Unemployment Rate.
- 
+- It will open a pop-up window, as shown below. Enter the details: ID: LF (shorthand for Labour force), Name: Labour force and Description: The labour force is the sum of the number of persons employed and the number of persons unemployed.
+
 ```{r 164, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image164.png")
 ```
 [Click here to enlarge the image](images/image164.png)
 
--	Click on the Load “Dataflows” button, as shown below. 
- 
+- Click on the Load “Dataflows” button, as shown below. It will open another pop-up window to select the dataflows through the Registry.
+
 ```{r 166, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image166.png")
 ```
 [Click here to enlarge the image](images/image166.png)
 
--	It will open another pop-up window to select the dataflow through the Registry.
- 
+- Select the Registry (LOCAL_REGISTRY), then the dataflows, and press Apply as shown below.
+
 ```{r 168, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image168.png")
 ```
 [Click here to enlarge the image](images/image168.png)
 
--	Select the Registry (LOCAL_REGISTRY), then the dataflow, and press Apply as shown below.
- 
+- The resulting window will show the two dataflows in the dataflow pool, as shown below.
+
 ```{r 170, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image170.png")
 ```
 [Click here to enlarge the image](images/image170.png)
 
--	A message will appear as shown below.
- 
+- Select both the dataflows and move (by dragging and dropping) to the Attached Dataflows pane on the right, as shown below. Click on Apply.
+
 ```{r 172, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image172.png")
 ```
 [Click here to enlarge the image](images/image172.png)
 
--	Clicking the OK button will lead you to the following window.
- 
+- Clicking “Apply” in the previous step will take you to the following window, showing the entry into the CATEGORY POOL.
+
 ```{r 174, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image174.png")
 ```
 [Click here to enlarge the image](images/image174.png)
 
--	As shown below, move (dragging and dropping) the dataflow to the ‘attached dataflows’ space.
- 
+- Move it to the right pane, as shown below.
+
 ```{r 176, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image176.png")
 ```
 [Click here to enlarge the image](images/image176.png)
 
--	Clicking “Apply” in that pop-up will take you to the following window, showing the entry into the CATEGORY POOL.
- 
+- Then hit Save (Save without descendants), and it will show the pop-up windows to ensure the location where it saves the file, as shown below.
+
 ```{r 178, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image178.png")
 ```
 [Click here to enlarge the image](images/image178.png)
 
--	Move it to the right pane, as shown below.
- 
+- Clicking on Save will ask the confirmation to merge the file. Select Yes.
+
 ```{r 180, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image180.png")
 ```
 [Click here to enlarge the image](images/image180.png)
 
--	Then hit Save (Save without descendants), and it will show the pop-up windows to ensure the location where it saves the file, as shown below.
- 
+- The XML file (by going to the location of the folder we created before and opening the XML file) would be like the one below.
+
 ```{r 182, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image182.png")
 ```
 [Click here to enlarge the image](images/image182.png)
 
--	Clicking on Save will ask the confirmation to merge the file. Select Yes.
--	Repeat the process for the other category, ‘Population outside the labour force’. The final view would be as follows:
- 
-```{r 184, echo=FALSE, fig.align="center", out.width="100%"}
-knitr::include_graphics("./images/image184.png")
-```
-[Click here to enlarge the image](images/image184.png)
-
--	The XML file (by going to the location of the folder we created before and opening the XML file) would be like the one below.
- 
-```{r 186, echo=FALSE, fig.align="center", out.width="100%"}
-knitr::include_graphics("./images/image186.png")
-```
-[Click here to enlarge the image](images/image186.png)
 
 ## Uploading XML file to the DLM {#uploading-xml}
 
