@@ -77,7 +77,7 @@
 
 \title{SDMX Constructor: User Manual}
 \author{International Labour Organization: Department of Statistics}
-\date{2023-06-06}
+\date{2023-06-07}
 
 \begin{document}
 \maketitle
@@ -325,7 +325,7 @@ Names and functions
 \end{minipage} \\
 \midrule()
 \endhead
-\includegraphics{images/image017.png} & Load from Registry. Select from a dropdown list to load. \\
+\includegraphics{images/image017.png} & `Load from Registry' is the registry selector. It allows users to select from a dropdown list to load a registry. This registry could be a local folder or a local instance (localhost), or an online platform (with SDMX-compliant API). \\
 \includegraphics{images/image019.png} & Refresh the registry. \\
 \includegraphics{images/image020.png} & Import. Allows to import an SDMX XML file locally. \\
 \includegraphics{images/image021.png} & Reset the current Editor inputs. \\
@@ -383,8 +383,8 @@ Names and functions
 \end{minipage} \\
 \midrule()
 \endhead
-\includegraphics{images/image036.png} & Export. It saves the SDMX artefact in a local folder. It is available for DSD, Dataflow, ContentConstraint, AgencyScheme, and MSD without specific options. However, options are available to save artefacts from: 1. Codelist (available in the following formats: .Stat v7 Dim, CSV and SDMX-ML) and 2. ConceptScheme, Table Modeller and CategoryScheme (available in two flavours: Save with descendants and Save without descendants). \\
-\includegraphics{images/image037.png} or \includegraphics{images/image038.png} & Push to DLM (DLM is short for Data Lifecycle Manager of the .Stat Suite). This icon becomes active (appears with colours) when the tool is connected with a DLM instance. It is available for Codelist, DSD, Dataflow, ContentConstraint, AgencyScheme, and MSD without specific options. However, options are available to save artefacts from ConceptScheme, Table Modeller and CategoryScheme. \\
+\includegraphics{images/image036.png} & This is the Export button. This button saves the SDMX artefact in a local folder. In the case of saving the following artefacts: Concept Scheme, Table Modeller and Category Scheme, there are two options available: `Save with descendants' and `Save without descendants'. For saving a Code list, the following options are available: .Stat v7 Dim, CSV and SDMX-ML. For the following artefacts: DSD, Dataflow, ContentConstraint, Agency Scheme, and MSD, there are no variations in the option for saving. \\
+\includegraphics{images/image037.png} or \includegraphics{images/image038.png} & The `Push to DLM' (DLM is short for Data Lifecycle Manager of the .Stat Suite) button becomes active (appears with colours) when the SDMX Consctuctor is connected with a DLM instance of a .Stat Suite. Note that credentials are required to upload structures (push) to a registry. Two options are available for the following artefacts: ConceptScheme, Table Modeller and CategoryScheme: `Push with descendants' and `Push without descendants'. In the case of the following artefacts: Codelist, DSD, Dataflow, ContentConstraint, AgencyScheme, and MSD, there are no variations in the option for saving. \\
 \includegraphics{images/image039.png} & Structure Viewer. It lets you preview the tabulation and download the MS Excel and CSV templates. It is available for DSD and Dataflow. \\
 \bottomrule()
 \end{longtable}
@@ -488,6 +488,40 @@ As shown below, select a registry from the dropdown option to load the artefacts
 
 \href{images/image046.png}{Click here to enlarge the image}
 
+\textbf{How to add a new registry to the list}
+
+You can also use the SDMX Constructor to access and view the SDMX artefacts from additional SDMX registries. You can do that by following these steps.
+
+Click on the Registry button as shown below. It will open up a pop-up window and show the SDMX Registry tab.
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image235} \end{center}
+
+\href{images/image235.png}{Click here to enlarge the image}
+
+Clicking the New button will clear the two fields: Registry Name and Base URL.
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image236} \end{center}
+
+\href{images/image236.png}{Click here to enlarge the image}
+
+To illustrate further with an example, let's take the case of the Bank for International Settlements (BIS) SDMX registry here: \url{https://stats.bis.org/api-doc/v1}
+
+In the fields `Registry Name' and `Base URL', fill in the required details. For the Registry Name, let's write BIS, and for the Base URL, enter \url{https://stats.bis.org/api-doc/v1}. Pressing the Save button will result in a confirmation message indicating that the Registry URL is successfully saved, as shown below.
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image237} \end{center}
+
+\href{images/image237.png}{Click here to enlarge the image}
+
+Click on OK to close the message.
+
+Now, we can see the SDMX artefacts from the BIS SDMX registry. For instance, you can now click Codelist and select BIS from the `Load from Registry' option. This action will load the code lists from the BIS SDMX registry, as shown below.
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image238} \end{center}
+
+\href{images/image238.png}{Click here to enlarge the image}
+
+By accessing the default registries or adding new ones, you can easily access SDMX artefacts from registries, making data retrieval and analysis more efficient and effective.
+
 \hypertarget{setting-up}{%
 \section{Setting up a registry as a local folder}\label{setting-up}}
 
@@ -496,7 +530,7 @@ You can use the SDMX Constructor to create SDMX artefacts on your computer witho
 \begin{itemize}
 \tightlist
 \item
-  On your computer, create a folder, and let's call it LOCAL\_REGISTRY. The screenshot below shows that the folder is created within the C drive.
+  On your computer, create a folder, and let's call it LOCAL\_REGISTRY \footnote{You can name the folder as you prefer; however, there are some good practices which you can follow. For example, consider using a naming convention like ``My\_Registry'' or ``XXX\_Reg''. Use ``LOCAL\_XXX'' as a consistent naming convention for all local registries if you expect multiple registries, with XXX as a placeholder for differentiation. Also, the folder's name can be different from the registry's name as long as it's clear which set of artefacts it contains. Keep in mind that you can create multiple local registries in different folders.}. The screenshot below shows that the folder is created within the C drive.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image048} \end{center}
@@ -776,7 +810,7 @@ To create an AgencyScheme, you can use the SDMX Constructor by following these s
 \end{itemize}
 
 \begin{quote}
-\textbf{Note on IDs and versions}: All SDMX artefacts, have a unique identifier: In case of AgencySchme these are Agency ID, ID, and Version. Each artefact is assigned a specific version number to keep track of changes and avoid conflicts. This makes sure that the artefacts are managed efficiently and can be easily shared and reused by others while also giving users control over the artefacts they create.
+\textbf{Note on IDs and versions}: In the context of SDMX, it is important to note that the identifiers for all SDMX artefacts follow a specific structure. These identifiers consist of a triplet composed of the ``Agency ID,'' the ``ID,'' and the ``Version.'' It is worth emphasising that this naming convention applies not only to the AgencyScheme but also to other SDMX artefacts. However, unlike other SDMX artefacts that may undergo revisions and updates, the AgencyScheme is a foundational component within the SDMX framework. It defines the agencies or organisations involved in statistical data and metadata exchange, along with their unique identifiers (Agency ID). While the AgencyScheme identifier still follows the triplet structure of ``Agency ID, ID, and Version,'' the version component remains fixed at 1.0. Also, note that a global guideline, `Guideline for CL\_ORGANIZATION', describes a method to build and maintain code lists for ``organisations'' broadly. \url{https://sdmx.org/wp-content/uploads/CL_ORGANISATION-1.0_April_2021.docx}.
 \end{quote}
 
 \begin{itemize}
@@ -882,13 +916,92 @@ To create an AgencyScheme, you can use the SDMX Constructor by following these s
 \hypertarget{creating-conceptscheme}{%
 \section{Creating ConceptScheme \& Codelist}\label{creating-conceptscheme}}
 
-In the context of SDMX, a ConceptScheme is a structured list of concepts used to define the dimensions and attributes of a dataset. When creating a data model, it's important to identify and define the key concepts that are relevant to the data being collected.
+In the context of SDMX, a ConceptScheme refers to a structured representation of concepts used to classify and describe statistical data and metadata. It serves as a framework or taxonomy for organising and categorising these concepts within the SDMX framework.
 
-One way to define these concepts is through the use of code lists, which are standardised lists of codes that classify objects based on a specific concept. For example, in a dataset on population demographics, the code list for the concept of sex might include codes such as Men, Women, and Both Sexes (Total).
+A ConceptScheme provides a standardised and harmonised way of defining relevant concepts to a particular domain or statistical subject area. It helps ensure consistency in interpreting and using these concepts across different datasets and statistical systems.
 
-To create Codelists and ConceptSchemes, you can use the SDMX Constructor by following these steps. First, upload the Code List and then the ConceptScheme. By completing these steps in sequence, you can create both artefacts in one go.
+When Concepts represent a statistical categorical variable (or qualitative variable), they can take on one of a limited and fixed number of possible values. In such a case, the concept is ``enumerated'', and its representation is given by a Codelist that contains the valid values that the concept can take on and its meaning. For example, in a dataset on population demographics, the code list for the concept of sex might include codes such as Men, Women, and Both Sexes (Total).
 
-\textbf{Create Codelist:}
+\textbf{Create Codelist: The ``one by one'' approach.}
+
+We can create a Concept Scheme in SDMX Consctuctor by following the steps described below. This section describes the one-by-one entry approach that is also possible, though the subsequent section illustrates the bulk load feature in detail.
+
+\begin{itemize}
+\tightlist
+\item
+  Click on the ConceptScheme button in the Editor menu. Then click the `Add New Concept' button in the Editor Ribbon menu, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image239} \end{center}
+
+\href{images/image239.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  The resulting pop-up window would look like the following.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image240} \end{center}
+
+\href{images/image240.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Provide the details as per the template. As an example, we choose the concept of `indicator'. Hence we could use ID = INDICATOR and Name = Indicator. For Description, we could use `Refers to statistical measure describing a particular aspect of a social, economic or environmental phenomenon'. We could keep the checkmark to add the code list (this would allow us to add the code list in the same interface), as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image241} \end{center}
+
+\href{images/image241.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\item
+  Now, we have three options to add the code list. Option 1 is to `Import Codelist from Registry', Option 2 is to `Upload Codelist from Local files', and below these options, as you can see in the image below, is the option to create a code list from scratch.
+\item
+  We create the code list from scratch in the next step. We could use ID = CL\_INDICATOR, Agency ID = DEMOLAND\_NSO, Version = 1.0 and Name = Indicator
+\item
+  We add two items to the code list for illustration purposes. ID = UNER, Name: Unemployment Rate and ID = POLF, Name = Population outside the labour force in two rows. Use the Append or + button to add multiple rows, as highlighted below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image242} \end{center}
+
+\href{images/image242.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Click the Apply button (as highlighted below).
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image243} \end{center}
+
+\href{images/image243.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  After clicking the Apply button, we will see the concept added in the CONCEPT POOL pane, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image244} \end{center}
+
+\href{images/image244.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Double-clicking on the concept scheme will open up the pop-up window, as shown below. This time, clicking `Save as SDMX - ML' (other options are also available), as shown below, will start the standard process of saving the artefact in a local folder for later use.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image245} \end{center}
+
+\href{images/image245.png}{Click here to enlarge the image}
+
+\textbf{Create Codelist: Bulk load.}
+
+To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Constructor by following these steps. First, upload the Code List and then the ConceptScheme. By completing these steps in sequence, you can create both artefacts in one go.
 
 \begin{itemize}
 \tightlist
