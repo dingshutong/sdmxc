@@ -598,77 +598,77 @@ The following steps assume you already have a ConceptScheme created and the corr
 
 - Start the SDMX Constructor. Click on the DSD button in the Editor menu and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the ‘Load from registry’ dropdown option, as shown below.
 
-```{r 247, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 247, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image247.png")
 ```
 [Click here to enlarge the image](images/image247.png)
 
 - Click on the ‘Load Concepts’ in the Editor Ribbon menu, as shown below. 
 
-```{r 248, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 248, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image248.png")
 ```
 [Click here to enlarge the image](images/image248.png)
 
 - In the resulting window, as shown below, select the SDMX Registry (which will be LOCAL_REGISTRY in this case). Then click on Load, as shown below. 
 
-```{r 249, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 249, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image249.png")
 ```
 [Click here to enlarge the image](images/image249.png)
 
 The concepts will be visible in the CONCEPT POOL, as shown below.
 
-```{r 250, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 250, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image250.png")
 ```
 [Click here to enlarge the image](images/image250.png)
 
 - Drag and drop the concepts from the CONCEPT POOL to either the DIMENSION or the ATTRIBUTE pane on the right. For our example data, except for the Unit of Measurement, which will go to the ATTRIBUTE pane, all other concepts will be in the DIMENSION pane, as shown below.
 
-```{r 251, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 251, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image251.png")
 ```
 [Click here to enlarge the image](images/image251.png)
 
 - Note that by default, SDMX Constructor has preselected TIME DIMENSION and PRIMARY MEASURE on the right pane. However, ensure that the ConceptScheme fields in both are set to the same (DEMOLAND_NSO:CS_DEMOLAND_NSO(1.0)) as other dimensions. Double-clicking the TIME DIMENSION will open up the pop-up window where it can be specified, as shown below. Click Apply. 
 
-```{r 252, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 252, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image252.png")
 ```
 [Click here to enlarge the image](images/image252.png)
 
 - Repeat the same for the PRIMARY MEASURE as shown below. Click Apply. 
 
-```{r 253, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 253, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image253.png")
 ```
 [Click here to enlarge the image](images/image253.png)
 
 - Fill in the details for the DSD (ID = DSD_DEMOLAND_NSO, AgencyID = DEMOLAND_NSO, Version = 1.0 and Name = Concept Scheme for the Demoland NSO) as shown below.
 
-```{r 254, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 254, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image254.png")
 ```
 [Click here to enlarge the image](images/image254.png)
 
 - Clicking on the Export/Save button, as shown below, will open up a pop-up window where you can make the following adjustments: Use Local ConceptScheme - turn it off; output Codelists - turn it off and Output ConceptSchemes - turn it off. 
 
-```{r 255, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 255, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image255.png")
 ```
 [Click here to enlarge the image](images/image255.png)
 
 - Clicking on Run will show the following message. Click on Yes. 
 
-```{r 256, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 256, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image256.png")
 ```
 [Click here to enlarge the image](images/image256.png)
 
 - You will see a message confirming the creation of the DSD, as shown below.
 
-```{r 257, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 257, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image257.png")
 ```
 [Click here to enlarge the image](images/image257.png)
@@ -679,91 +679,91 @@ Creating Dataflow
 
 - Click on the Dataflow button in the Editor menu and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the ‘Load from registry’ dropdown option, as shown below.
 
-```{r 258, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 258, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image258.png")
 ```
 [Click here to enlarge the image](images/image258.png)
 
 - For this example of Dataflow, we will select ‘Table 4.1: Unemployment Rate by sex and region’. We will first enter the details (ID = DF_UNER_SEX_GEO, AgencyID = DEMOLAND_NSO, Version = 1.0 and Name: Unemployment Rate (UNER) by sex and region) as shown below. 
 
-```{r 259, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 259, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image259.png")
 ```
 [Click here to enlarge the image](images/image259.png)
 
 - Then click on the Annotation button. After that, click on Standard Types in the pop-up window. Then select the LAYOUT_COLUMN and LAYOUT_ROW from the list. Finally, click on the Add button, as shown below. 
 
-```{r 260, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 260, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image260.png")
 ```
 [Click here to enlarge the image](images/image260.png)
 
 - You will see the following window.
 
-```{r 261, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 261, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image261.png")
 ```
 [Click here to enlarge the image](images/image261.png)
 
 - Select the LAYOUT_COLUMN. Then click in the Title column field. Then click on the Select Items button. Then following the layout scheme of Table 4.1, select the items for LAYOUT_COLUMN: as SEX and TIME_PERIOD. Finally, click on the Insert button. 
 
-```{r 262, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 262, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image262.png")
 ```
 [Click here to enlarge the image](images/image262.png)
 
 - Repeat the same for the LAYOUT_ROW. Click inside the corresponding field of the column ‘Title’, then click on the Select Items button. Then select GEO (as per Table 4.1) and click on the Insert button. 
 
-```{r 263, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 263, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image263.png")
 ```
 [Click here to enlarge the image](images/image263.png)
 
 - This is how it would look after both entries. 
 
-```{r 264, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 264, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image264.png")
 ```
 [Click here to enlarge the image](images/image264.png)
 
 - Clicking on the Save button will result in the following confirmation.
 
-```{r 265, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 265, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image265.png")
 ```
 [Click here to enlarge the image](images/image265.png)
 
 - Click OK. It will now show the 2 annotation notifications as highlighted below.
 
-```{r 266, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 266, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image266.png")
 ```
 [Click here to enlarge the image](images/image266.png)
 
 - Now, in the DSD Allocation pane, in the Associated DSD dropdown, select the DSD on which this Dataflow will be based. We selected the DSD we created before - DEMOLAND_NSO:DSD_DEMOLAND_NSO(1.0). 
 
-```{r 267, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 267, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image267.png")
 ```
 [Click here to enlarge the image](images/image267.png)
 
 - Now click on the Export/Save button, as shown below and click on Save. 
 
-```{r 268, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 268, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image268.png")
 ```
 [Click here to enlarge the image](images/image268.png)
 
 - It will show a message as shown below.
 
-```{r 269, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 269, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image269.png")
 ```
 [Click here to enlarge the image](images/image269.png)
 
 - Clicking on Yes will show a message indicating that the XML file (containing the Dataflow) has been created. 
 
-```{r 270, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 270, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image270.png")
 ```
 [Click here to enlarge the image](images/image270.png)
@@ -774,56 +774,56 @@ Creating ContentConstraint
 
 - Click on the ContentConstraint button in the Editor menu and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the ‘Load from registry’ dropdown option, as shown below.
 
-```{r 271, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 271, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image271.png")
 ```
 [Click here to enlarge the image](images/image271.png)
 
 - Fill in the details for the ContentConstraint (ID = CC_UNER_SEX_GEO, AgencyID = DEMOLAND_NSO, Version = 1.0 and Name = Unemployment Rate (UNER) by sex and region) as shown below. 
 
-```{r 272, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 272, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image272.png")
 ```
 [Click here to enlarge the image](images/image272.png)
 
 - Then in the ConstraintAttachment pane, in the Attachment Type, select the Dataflow option and from the dropdown list underneath, select the relevant dataflow as shown below. 
 
-```{r 273, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 273, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image273.png")
 ```
 [Click here to enlarge the image](images/image273.png)
 
 - Then click the append (or +) button to add the required rows. 
 
-```{r 274, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 274, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image274.png")
 ```
 [Click here to enlarge the image](images/image274.png)
 
 - We add two rows. In the first row, we select the concept ‘Indicator’ and the value as UNER (for Unemployment Rate). In the second row, we select the concept ‘UNIT_Measure’ (for Unit of Measurement) and the value as RT (for Rate), as shown below. 
 
-```{r 275, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 275, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image275.png")
 ```
 [Click here to enlarge the image](images/image275.png)
 
 - Now click on the Export/Save button, as shown below and click on Save in the resulting window. 
 
-```{r 276, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 276, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image276.png")
 ```
 [Click here to enlarge the image](images/image276.png)
 
 - It will show a message as shown below.
 
-```{r 277, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 277, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image277.png")
 ```
 [Click here to enlarge the image](images/image277.png)
 
 Clicking on Yes will show a message in the bottom right-hand corner indicating that the XML file is created. 
 
-```{r 278, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 278, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image278.png")
 ```
 [Click here to enlarge the image](images/image278.png)
