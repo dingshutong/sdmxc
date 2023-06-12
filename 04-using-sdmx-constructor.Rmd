@@ -408,7 +408,7 @@ knitr::include_graphics("./images/image127.png")
 
 - After that, if you go to the file’s location, you will see the XML file created, as shown below.
 
-```{r 129, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 129, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image129.png")
 ```
 [Click here to enlarge the image](images/image129.png)
@@ -575,7 +575,7 @@ knitr::include_graphics("./images/image285.png")
 
 -	After that, if you go to the file’s location, you will see the XML file created, as shown below.
  
-```{r 246, echo=FALSE, fig.align="center", out.width="50%"}
+```{r 246, echo=FALSE, fig.align="center", out.width="100%"}
 knitr::include_graphics("./images/image246.png")
 ```
 [Click here to enlarge the image](images/image246.png)
