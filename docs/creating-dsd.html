@@ -23,7 +23,7 @@
 <meta name="author" content="International Labour Organization: Department of Statistics" />
 
 
-<meta name="date" content="2023-06-07" />
+<meta name="date" content="2023-06-12" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -136,8 +136,179 @@
 <div id="creating-dsd" class="section level2 hasAnchor" number="4.6">
 <h2><span class="header-section-number">4.6</span> Creating DSD, ContentConstraint and Dataflow<a href="creating-dsd.html#creating-dsd" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>In SDMX, a Data Structure Definition (DSD) is used to organise data in a specific format. Represented as a cube, a DSD is made up of dimensions and attributes. A Dataflow, on the other hand, represents a specific portion or filtered view of the cube that the DSD represents. A Content Constraint specifies the permitted code list and codes for a particular Dataflow.</p>
-<p>In SDMX Constructor, the Table Modeller feature provides an intuitive user interface for designing statistical tables and generating the corresponding SDMX artefacts.</p>
-<p>Recalling our two initial tables (Table: <a href="preparing-inputs.html#tab:table41">4.1</a> and Table: <a href="preparing-inputs.html#tab:table42">4.2</a>), we will now generate DSDs, ContentConstraints and Dataflows. We can create all these artefacts through the <a href="table-modeller.html#table-modeller">Table Modeller</a> option in the SDMX Constructor.</p>
+<p>In SDMX Constructor, we can create DSDs, Dataflows and Concent Constraints either by “one by one” approach or in one go using the Table Modeller functionality.</p>
+<p>We will first see how to apply the “one by one” approach and, subsequently, the Table Modeller functionality.</p>
+<p><strong>The “one by one” approach</strong></p>
+<p>Creating DSD</p>
+<p>The following steps assume you already have a ConceptScheme created and the corresponding SDMX-ML (XML) file is saved on your computer.</p>
+<ul>
+<li>Start the SDMX Constructor. Click on the DSD button in the Editor menu and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the ‘Load from registry’ dropdown option, as shown below.</li>
+</ul>
+<p><img src="images/image247.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image247.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Click on the ‘Load Concepts’ in the Editor Ribbon menu, as shown below.</li>
+</ul>
+<p><img src="images/image248.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image248.png">Click here to enlarge the image</a></p>
+<ul>
+<li>In the resulting window, as shown below, select the SDMX Registry (which will be LOCAL_REGISTRY in this case). Then click on Load, as shown below.</li>
+</ul>
+<p><img src="images/image249.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image249.png">Click here to enlarge the image</a></p>
+<p>The concepts will be visible in the CONCEPT POOL, as shown below.</p>
+<p><img src="images/image250.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image250.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Drag and drop the concepts from the CONCEPT POOL to either the DIMENSION or the ATTRIBUTE pane on the right. For our example data, except for the Unit of Measurement, which will go to the ATTRIBUTE pane, all other concepts will be in the DIMENSION pane, as shown below.</li>
+</ul>
+<p><img src="images/image251.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image251.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Note that by default, SDMX Constructor has preselected TIME DIMENSION and PRIMARY MEASURE on the right pane. However, ensure that the ConceptScheme fields in both are set to the same (DEMOLAND_NSO:CS_DEMOLAND_NSO(1.0)) as other dimensions. Double-clicking the TIME DIMENSION will open up the pop-up window where it can be specified, as shown below. Click Apply.</li>
+</ul>
+<p><img src="images/image252.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image252.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Repeat the same for the PRIMARY MEASURE as shown below. Click Apply.</li>
+</ul>
+<p><img src="images/image253.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image253.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Fill in the details for the DSD (ID = DSD_DEMOLAND_NSO, AgencyID = DEMOLAND_NSO, Version = 1.0 and Name = Concept Scheme for the Demoland NSO) as shown below.</li>
+</ul>
+<p><img src="images/image254.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image254.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Clicking on the Export/Save button, as shown below, will open up a pop-up window where you can make the following adjustments: Use Local ConceptScheme - turn it off; output Codelists - turn it off and Output ConceptSchemes - turn it off.</li>
+</ul>
+<p><img src="images/image255.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image255.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Clicking on Run will show the following message. Click on Yes.</li>
+</ul>
+<p><img src="images/image256.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image256.png">Click here to enlarge the image</a></p>
+<ul>
+<li>You will see a message confirming the creation of the DSD, as shown below.</li>
+</ul>
+<p><img src="images/image257.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image257.png">Click here to enlarge the image</a></p>
+<ul>
+<li>After that, you will see the XML file created if you go to the file’s location.</li>
+</ul>
+<p>Creating Dataflow</p>
+<ul>
+<li>Click on the Dataflow button in the Editor menu and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the ‘Load from registry’ dropdown option, as shown below.</li>
+</ul>
+<p><img src="images/image258.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image258.png">Click here to enlarge the image</a></p>
+<ul>
+<li>For this example of Dataflow, we will select ‘Table 4.1: Unemployment Rate by sex and region’. We will first enter the details (ID = DF_UNER_SEX_GEO, AgencyID = DEMOLAND_NSO, Version = 1.0 and Name: Unemployment Rate (UNER) by sex and region) as shown below.</li>
+</ul>
+<p><img src="images/image259.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image259.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Then click on the Annotation button. After that, click on Standard Types in the pop-up window. Then select the LAYOUT_COLUMN and LAYOUT_ROW from the list. Finally, click on the Add button, as shown below.</li>
+</ul>
+<p><img src="images/image260.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image260.png">Click here to enlarge the image</a></p>
+<ul>
+<li>You will see the following window.</li>
+</ul>
+<p><img src="images/image261.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image261.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Select the LAYOUT_COLUMN. Then click in the Title column field. Then click on the Select Items button. Then following the layout scheme of Table 4.1, select the items for LAYOUT_COLUMN: as SEX and TIME_PERIOD. Finally, click on the Insert button.</li>
+</ul>
+<p><img src="images/image262.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image262.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Repeat the same for the LAYOUT_ROW. Click inside the corresponding field of the column ‘Title’, then click on the Select Items button. Then select GEO (as per Table 4.1) and click on the Insert button.</li>
+</ul>
+<p><img src="images/image263.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image263.png">Click here to enlarge the image</a></p>
+<ul>
+<li>This is how it would look after both entries.</li>
+</ul>
+<p><img src="images/image264.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image264.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Clicking on the Save button will result in the following confirmation.</li>
+</ul>
+<p><img src="images/image265.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image265.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Click OK. It will now show the 2 annotation notifications as highlighted below.</li>
+</ul>
+<p><img src="images/image266.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image266.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Now, in the DSD Allocation pane, in the Associated DSD dropdown, select the DSD on which this Dataflow will be based. We selected the DSD we created before - DEMOLAND_NSO:DSD_DEMOLAND_NSO(1.0).</li>
+</ul>
+<p><img src="images/image267.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image267.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Now click on the Export/Save button, as shown below and click on Save.</li>
+</ul>
+<p><img src="images/image268.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image268.png">Click here to enlarge the image</a></p>
+<ul>
+<li>It will show a message as shown below.</li>
+</ul>
+<p><img src="images/image269.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image269.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Clicking on Yes will show a message indicating that the XML file (containing the Dataflow) has been created.</li>
+</ul>
+<p><img src="images/image270.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image270.png">Click here to enlarge the image</a></p>
+<ul>
+<li>After that, you will see the XML file created if you go to the file’s location.</li>
+</ul>
+<p>Creating ContentConstraint</p>
+<ul>
+<li>Click on the ContentConstraint button in the Editor menu and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the ‘Load from registry’ dropdown option, as shown below.</li>
+</ul>
+<p><img src="images/image271.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image271.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Fill in the details for the ContentConstraint (ID = CC_UNER_SEX_GEO, AgencyID = DEMOLAND_NSO, Version = 1.0 and Name = Unemployment Rate (UNER) by sex and region) as shown below.</li>
+</ul>
+<p><img src="images/image272.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image272.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Then in the ConstraintAttachment pane, in the Attachment Type, select the Dataflow option and from the dropdown list underneath, select the relevant dataflow as shown below.</li>
+</ul>
+<p><img src="images/image273.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image273.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Then click the append (or +) button to add the required rows.</li>
+</ul>
+<p><img src="images/image274.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image274.png">Click here to enlarge the image</a></p>
+<ul>
+<li>We add two rows. In the first row, we select the concept ‘Indicator’ and the value as UNER (for Unemployment Rate). In the second row, we select the concept ‘UNIT_Measure’ (for Unit of Measurement) and the value as RT (for Rate), as shown below.</li>
+</ul>
+<p><img src="images/image275.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image275.png">Click here to enlarge the image</a></p>
+<ul>
+<li>Now click on the Export/Save button, as shown below and click on Save in the resulting window.</li>
+</ul>
+<p><img src="images/image276.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image276.png">Click here to enlarge the image</a></p>
+<ul>
+<li>It will show a message as shown below.</li>
+</ul>
+<p><img src="images/image277.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image277.png">Click here to enlarge the image</a></p>
+<p>Clicking on Yes will show a message in the bottom right-hand corner indicating that the XML file is created.</p>
+<p><img src="images/image278.png" width="100%" style="display: block; margin: auto;" />
+<a href="images/image278.png">Click here to enlarge the image</a></p>
+<p>After that, you will see the XML file created if you go to the file’s location.</p>
+<p><strong>The Table Modeller approach</strong></p>
+<p>In SDMX Constructor, the Table Modeller feature (Under special topics, the functionality of the <a href="table-modeller.html#table-modeller">Table Modeller</a> is detailed) provides an intuitive user interface for designing statistical tables and generating the corresponding SDMX artefacts in one go.</p>
+<p>Recalling our two initial tables (Table: <a href="preparing-inputs.html#tab:table41">4.1</a> and Table: <a href="preparing-inputs.html#tab:table42">4.2</a>), we will now generate DSDs, ContentConstraints and Dataflows. We can create all these artefacts through the Table Modeller option in the SDMX Constructor.</p>
 <ul>
 <li>Click on the Table Modeller button on top and ensure that the folder we created before, LOCAL_REGISTRY, is selected from the Table Modeller Editor’s ‘Load from registry’ dropdown option, as shown below.</li>
 </ul>

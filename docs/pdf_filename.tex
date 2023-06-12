@@ -5,16 +5,19 @@
 \documentclass[
 ]{book}
 \usepackage{amsmath,amssymb}
-\usepackage{lmodern}
 \usepackage{iftex}
 \ifPDFTeX
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
   \usepackage{textcomp} % provide euro and other symbols
 \else % if luatex or xetex
-  \usepackage{unicode-math}
+  \usepackage{unicode-math} % this also loads fontspec
   \defaultfontfeatures{Scale=MatchLowercase}
   \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
 \fi
 % Use upquote if available, for straight quotes in verbatim environments
 \IfFileExists{upquote.sty}{\usepackage{upquote}}{}
@@ -68,7 +71,7 @@
 \bibliographystyle{plainnat}
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\urlstyle{same} % disable monospaced font for URLs
+\urlstyle{same}
 \hypersetup{
   pdftitle={SDMX Constructor: User Manual},
   pdfauthor={International Labour Organization: Department of Statistics},
@@ -77,7 +80,7 @@
 
 \title{SDMX Constructor: User Manual}
 \author{International Labour Organization: Department of Statistics}
-\date{2023-06-07}
+\date{2023-06-12}
 
 \begin{document}
 \maketitle
@@ -227,28 +230,29 @@ In the top right corner (as highlighted below), the first group of buttons (Gene
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2917}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7083}}@{}}
 \caption{\label{tab:table31} A bird's-eye view of the menu items in the top right corner (General Functions)}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Menu item
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 What to expect: A bird's-eye view of General Functions
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Menu item
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 What to expect: A bird's-eye view of General Functions
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \textbf{Reset} & The Reset button resets the tool to its default settings. It removes all the inputs and initiates a fresh start. \\
 \textbf{Support} & The Support button launches the default email application on a computer, with a new email message addressed to the support team for the tool, ready to be composed and sent. \\
 \textbf{Locale} & The Support button launches the default email application on a computer, with a new email message addressed to the support team for the tool, ready to be composed and sent. \\
 \textbf{Registry} & The Registry button provides several options for users to configure their settings. These are grouped in the following tabs: SDMX Registry, Google API, DeepL and Proxy. In the SDMX Registry tab, users can specify the connection details of the SDMX registry (either a local folder or a local instance (localhost) or an online platform (with SDMX-compliant API). Also, using connection credentials, users can push SDMX artefact to the .Stat Suite through the `DLM Connection' option available in the SDMX Registry tab. Using the Google API and DeepL tabs, users can enter authentication credentials for automated translation using Google Translation or DeepL API. The Proxy tab allows specifying the proxy settings for the internet connection if a proxy is needed. \\
 & \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{editors-menu}{%
@@ -264,22 +268,24 @@ The second group of menu items (Editors) shows the options in the top left corne
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2917}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7083}}@{}}
 \caption{\label{tab:table32} A bird's-eye view of the menu items in the top left corner (Editors)}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Menu item
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 What to expect: A bird's-eye view of the menu items in the top left corner (Editors)
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Menu item
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 What to expect: A bird's-eye view of the menu items in the top left corner (Editors)
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \textbf{Codelist} & The Codelist button shows an interface to create or edit the list of Concepts (dimensions/attributes of a modelled dataset), each having a list of possible values or codes. The codes have unique IDs and (multilingual) labels and may have other information such as order and hierarchy. \\
 \textbf{ConceptScheme} & The ConceptScheme button shows an interface to create or edit the Concepts (dimensions/attributes of a modelled dataset). Each concept has an ID and (multilingual) labels and may have other information. \\
 \textbf{Table Modeller} & The Table Modeller button shows the options to generate the SDMX artefacts by recreating the statistical table using the Concepts (dimensions/attributes of a modelled data set) with an intuitive user interface (drag and drop). \\
@@ -289,7 +295,6 @@ What to expect: A bird's-eye view of the menu items in the top left corner (Edit
 \textbf{AgencyScheme} & The AgencyScheme button shows an interface to create or edit a hierarchical list of agencies or organisations. Each agency or organisation is identified by a unique code (ID), a name, and other descriptive information. \\
 \textbf{CategoryScheme} & The CategoryScheme button shows an interface to create or edit a CategoryScheme, which is essentially a list of categories organised in a hierarchical structure. Each category is identified by a unique code (ID), a name, and other descriptive information. \\
 \textbf{MSD} & The MSD button abbreviating Metadata Structure Definition shows an interface describing the structure of reference metadata associated with a data set. It specifies the elements and attributes that can be used to represent metadata concepts and the relationships between them. \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{editor-ribbon-menu}{%
@@ -309,22 +314,24 @@ Below are the icons representing the menu items (Editor Ribbon) and their functi
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2917}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7083}}@{}}
 \caption{\label{tab:table33} A bird's-eye view of the menu items in the Editor Ribbon}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Menu item
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Names and functions
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Menu item
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Names and functions
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 \includegraphics{images/image017.png} & `Load from Registry' is the registry selector. It allows users to select from a dropdown list to load a registry. This registry could be a local folder or a local instance (localhost), or an online platform (with SDMX-compliant API). \\
 \includegraphics{images/image019.png} & Refresh the registry. \\
 \includegraphics{images/image020.png} & Import. Allows to import an SDMX XML file locally. \\
@@ -337,7 +344,6 @@ Names and functions
 \includegraphics{images/image028.png} & Delete Selected Concepts. \\
 \includegraphics{images/image030.png} & Move Up. \\
 \includegraphics{images/image031.png} & Move Down. \\
-\bottomrule()
 \end{longtable}
 
 If a user chooses ``Codelist'' from the top menu, the corresponding menu items in the third group will appear as ``Load from registry'' (from the dropdown menu), ``Refresh the registry'', ``Import'', ``Reset the current Editor inputs'', ``Translation Service'', and ``Bulk load''.
@@ -367,26 +373,27 @@ Below are the icons representing the menu items, along with their features. User
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2917}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7083}}@{}}
 \caption{\label{tab:table34} A bird's-eye view of the menu items in the Editor Ribbon}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Menu item
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Names and functions
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Menu item
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Names and functions
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
-\includegraphics{images/image036.png} & This is the Export button. This button saves the SDMX artefact in a local folder. In the case of saving the following artefacts: Concept Scheme, Table Modeller and Category Scheme, there are two options available: `Save with descendants' and `Save without descendants'. For saving a Code list, the following options are available: .Stat v7 Dim, CSV and SDMX-ML. For the following artefacts: DSD, Dataflow, ContentConstraint, Agency Scheme, and MSD, there are no variations in the option for saving. \\
+\bottomrule\noalign{}
+\endlastfoot
+\includegraphics{images/image036.png} & This is the Export button. This button saves the SDMX artefact in a local folder. In the case of Concept Scheme, Table Modeller and Category Scheme, there are two options available: `Save with descendants' and `Save without descendants'. For saving a Code list, the following options are available: .Stat v7 Dim, CSV and SDMX-ML. For the following artefacts: DSD, Dataflow, ContentConstraint, Agency Scheme, and MSD, there are no variations in the option for saving. \\
 \includegraphics{images/image037.png} or \includegraphics{images/image038.png} & The `Push to DLM' (DLM is short for Data Lifecycle Manager of the .Stat Suite) button becomes active (appears with colours) when the SDMX Consctuctor is connected with a DLM instance of a .Stat Suite. Note that credentials are required to upload structures (push) to a registry. Two options are available for the following artefacts: ConceptScheme, Table Modeller and CategoryScheme: `Push with descendants' and `Push without descendants'. In the case of the following artefacts: Codelist, DSD, Dataflow, ContentConstraint, AgencyScheme, and MSD, there are no variations in the option for saving. \\
 \includegraphics{images/image039.png} & Structure Viewer. It lets you preview the tabulation and download the MS Excel and CSV templates. It is available for DSD and Dataflow. \\
-\bottomrule()
 \end{longtable}
 
 \hypertarget{working-area}{%
@@ -617,7 +624,7 @@ Imagine a country called Demoland and its National Statistical Office (NSO), Dem
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1284}}
   >{\centering\arraybackslash}p{(\columnwidth - 12\tabcolsep) * \real{0.1743}}@{}}
 \caption{\label{tab:table41} Unemployment Rate by sex and region}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Region
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -633,9 +640,9 @@ Region
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 2016
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Region
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
@@ -651,26 +658,29 @@ Region
 \end{minipage} & \begin{minipage}[b]{\linewidth}\centering
 2016
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 & \textbf{Men} & \textbf{Women} & \textbf{Both Sexes} & \textbf{Men} & \textbf{Women} & \textbf{Both Sexes} \\
 Cities and Towns & 14.4 & 20.7 & 17.6 & 14.4 & 21 & 17.2 \\
 Urban Villages & 27.8 & 30.3 & 29.1 & 28.2 & 29.4 & 29.1 \\
 Rural Areas & 26.2 & 29.6 & 28 & 26.2 & 29.5 & 27.1 \\
 Total & 24 & 27.9 & 26 & 24 & 27.9 & 26 \\
-\bottomrule()
 \end{longtable}
 
 \begin{longtable}[]{@{}lccc@{}}
 \caption{\label{tab:table42} Population outside the labour force by sex and age group (2022)}\tabularnewline
-\toprule()
+\toprule\noalign{}
 Age Group & Men & Women & Both Sexes \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 Age Group & Men & Women & Both Sexes \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 15-24 & 130,088 & 133,770 & 263,856 \\
 25-34 & 33,165 & 60,240 & 93,405 \\
 35-44 & 21,970 & 38,944 & 60,914 \\
@@ -678,7 +688,6 @@ Age Group & Men & Women & Both Sexes \\
 55-64 & 26,821 & 44,010 & 70,831 \\
 65+ & 45,323 & 78,725 & 124,048 \\
 Total & 275,997 & 392,092 & 668,088 \\
-\bottomrule()
 \end{longtable}
 
 After modelling the data in both tables, we have the following ConceptScheme and Codelist arranged below. Note that the order of the columns in the following tables is per the SDMX Constructor's bulk load default templates (ConceptScheme and Codelist).
@@ -691,7 +700,7 @@ After modelling the data in both tables, we have the following ConceptScheme and
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5840}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1280}}@{}}
 \caption{\label{tab:table43} ConceptScheme}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Concept ID
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -701,9 +710,9 @@ Description
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Codelist ID
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Concept ID
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -713,8 +722,10 @@ Description
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Codelist ID
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 INDICATOR & Indicator & Refers to statistical measure describing a particular aspect of a social, economic or environmental phenomenon & CL\_INDICATOR \\
 UNIT\_MEASURE & Unit of measure & Unit in which the observation values are expressed & CL\_UNIT\_MEASURE \\
 SEX & Sex & State of being male or female & CL\_SEX \\
@@ -723,7 +734,6 @@ TIME\_PERIOD & Time period & Timespan or point in time to which the observation 
 FREQ & Frequency & Time interval at which observations occur over a given time period & CL\_FREQ \\
 AGE & Age groups & Length of time that an entity has lived or existed & CL\_AGE \\
 OBS\_VALUE & Observation values & Refers to data or observation values & CL\_OBS\_VALUE \\
-\bottomrule()
 \end{longtable}
 
 \textbf{Codelist:}
@@ -734,7 +744,7 @@ OBS\_VALUE & Observation values & Refers to data or observation values & CL\_OBS
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.1042}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 6\tabcolsep) * \real{0.5104}}@{}}
 \caption{\label{tab:table44} Codelist}\tabularnewline
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Codelist ID
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -744,9 +754,9 @@ Code ID
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Code Name
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endfirsthead
-\toprule()
+\toprule\noalign{}
 \begin{minipage}[b]{\linewidth}\raggedright
 Codelist ID
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
@@ -756,8 +766,10 @@ Code ID
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Code Name
 \end{minipage} \\
-\midrule()
+\midrule\noalign{}
 \endhead
+\bottomrule\noalign{}
+\endlastfoot
 CL\_INDICATOR & Indicator & UNER & Unemployment Rate \\
 CL\_INDICATOR & Indicator & POLF & Population outside the labour force \\
 CL\_UNIT\_MEASURE & Unit of measure & RT & Rate \\
@@ -777,7 +789,6 @@ CL\_AGE & Age groups & 45T54 & 45-54 \\
 CL\_AGE & Age groups & 55T64 & 55-64 \\
 CL\_AGE & Age groups & GE65 & 65+ \\
 CL\_AGE & Age groups & \_T & Total \\
-\bottomrule()
 \end{longtable}
 
 We will use these dummy datasets in this user manual to illustrate some critical functionalities of SDMX Constructor.
@@ -999,6 +1010,86 @@ We can create a Concept Scheme in SDMX Consctuctor by following the steps descri
 
 \href{images/image245.png}{Click here to enlarge the image}
 
+\begin{itemize}
+\tightlist
+\item
+  After creating all the concepts and related code lists, you can see all the concepts in the CONCEPT POOL, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image112} \end{center}
+
+\href{images/image112.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Move all the concepts from the CONCEPT POOL to the CONCEPT pane by selecting all (ctrl + a), then dragging and dropping. After the move, it would look like the following.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image114} \end{center}
+
+\href{images/image114.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  After moving the concepts, enter the details: (ID: CS\_DEMOLAND\_NSO, AgencyID: DEMOLAND\_NSO, Version: 1.0, and Name: Concept Scheme of Demoland NSO) for the ConceptScheme, as shown below, to save the ConceptScheme.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image116} \end{center}
+
+\href{images/image116.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Then, click the `Save with descendants' from the save option as shown below. This option, `Save with descendants,' will save the concept scheme with the code list.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image118} \end{center}
+
+\href{images/image118.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  A pop-up message will ask to save the XML file in the folder (LOCAL\_REGISTRY) we created before. Click on Save to save the file.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image123} \end{center}
+
+\href{images/image123.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  After clicking Save, the tool will ask the question to merge files. Select Yes.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image125} \end{center}
+
+\href{images/image125.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  A confirmation message will appear briefly at the bottom right corner, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image127} \end{center}
+
+\href{images/image127.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  After that, if you go to the file's location, you will see the XML file created, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image129} \end{center}
+
+\href{images/image129.png}{Click here to enlarge the image}
+
 \textbf{Create Codelist: Bulk load.}
 
 To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Constructor by following these steps. First, upload the Code List and then the ConceptScheme. By completing these steps in sequence, you can create both artefacts in one go.
@@ -1161,9 +1252,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
   After loading, the concepts will be visible in the CONCEPT POOL, as shown below.
 \end{itemize}
 
-\begin{center}\includegraphics[width=1\linewidth]{./images/image112} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{./images/image279} \end{center}
 
-\href{images/image112.png}{Click here to enlarge the image}
+\href{images/image279.png}{Click here to enlarge the image}
 
 \begin{itemize}
 \tightlist
@@ -1171,9 +1262,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
   Move all the concepts from the CONCEPT POOL to the CONCEPT pane by selecting all (ctrl + a), then dragging and dropping. After the move, it would look like the following.
 \end{itemize}
 
-\begin{center}\includegraphics[width=1\linewidth]{./images/image114} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{./images/image280} \end{center}
 
-\href{images/image114.png}{Click here to enlarge the image}
+\href{images/image280.png}{Click here to enlarge the image}
 
 \begin{itemize}
 \tightlist
@@ -1181,9 +1272,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
   After moving the concepts, enter the details: (ID: CS\_DEMOLAND\_NSO, AgencyID: DEMOLAND\_NSO, Version: 1.0, and Name: Concept Scheme of Demoland NSO) for the ConceptScheme, as shown below.
 \end{itemize}
 
-\begin{center}\includegraphics[width=1\linewidth]{./images/image116} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{./images/image281} \end{center}
 
-\href{images/image116.png}{Click here to enlarge the image}
+\href{images/image281.png}{Click here to enlarge the image}
 
 \begin{itemize}
 \tightlist
@@ -1191,9 +1282,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
   Then, click the `Save with descendants' from the save option as shown below. This option, `Save with descendants,' will save the concept scheme with the codelist.
 \end{itemize}
 
-\begin{center}\includegraphics[width=1\linewidth]{./images/image118} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{./images/image282} \end{center}
 
-\href{images/image118.png}{Click here to enlarge the image}
+\href{images/image282.png}{Click here to enlarge the image}
 
 \begin{itemize}
 \tightlist
@@ -1201,9 +1292,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
   A pop-up message will ask to save the XML file in the folder (LOCAL\_REGISTRY) we created before. Click on Save to save the file.
 \end{itemize}
 
-\begin{center}\includegraphics[width=1\linewidth]{./images/image123} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{./images/image283} \end{center}
 
-\href{images/image123.png}{Click here to enlarge the image}
+\href{images/image283.png}{Click here to enlarge the image}
 
 \begin{itemize}
 \tightlist
@@ -1211,9 +1302,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
   After clicking Save, the tool will ask the question to merge files. Select Yes.
 \end{itemize}
 
-\begin{center}\includegraphics[width=1\linewidth]{./images/image125} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{./images/image284} \end{center}
 
-\href{images/image125.png}{Click here to enlarge the image}
+\href{images/image284.png}{Click here to enlarge the image}
 
 \begin{itemize}
 \tightlist
@@ -1221,9 +1312,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
   A confirmation message will appear for a short time at the bottom right corner, as shown below.
 \end{itemize}
 
-\begin{center}\includegraphics[width=1\linewidth]{./images/image127} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{./images/image285} \end{center}
 
-\href{images/image127.png}{Click here to enlarge the image}
+\href{images/image285.png}{Click here to enlarge the image}
 
 \begin{itemize}
 \tightlist
@@ -1231,9 +1322,9 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
   After that, if you go to the file's location, you will see the XML file created, as shown below.
 \end{itemize}
 
-\begin{center}\includegraphics[width=0.5\linewidth]{./images/image129} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{./images/image246} \end{center}
 
-\href{images/image129.png}{Click here to enlarge the image}
+\href{images/image246.png}{Click here to enlarge the image}
 
 \begin{itemize}
 \tightlist
@@ -1246,9 +1337,351 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
 
 In SDMX, a Data Structure Definition (DSD) is used to organise data in a specific format. Represented as a cube, a DSD is made up of dimensions and attributes. A Dataflow, on the other hand, represents a specific portion or filtered view of the cube that the DSD represents. A Content Constraint specifies the permitted code list and codes for a particular Dataflow.
 
-In SDMX Constructor, the Table Modeller feature provides an intuitive user interface for designing statistical tables and generating the corresponding SDMX artefacts.
+In SDMX Constructor, we can create DSDs, Dataflows and Concent Constraints either by ``one by one'' approach or in one go using the Table Modeller functionality.
 
-Recalling our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:table42}), we will now generate DSDs, ContentConstraints and Dataflows. We can create all these artefacts through the \protect\hyperlink{table-modeller}{Table Modeller} option in the SDMX Constructor.
+We will first see how to apply the ``one by one'' approach and, subsequently, the Table Modeller functionality.
+
+\textbf{The ``one by one'' approach}
+
+Creating DSD
+
+The following steps assume you already have a ConceptScheme created and the corresponding SDMX-ML (XML) file is saved on your computer.
+
+\begin{itemize}
+\tightlist
+\item
+  Start the SDMX Constructor. Click on the DSD button in the Editor menu and ensure that the folder we created before, LOCAL\_REGISTRY, is selected from the `Load from registry' dropdown option, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image247} \end{center}
+
+\href{images/image247.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Click on the `Load Concepts' in the Editor Ribbon menu, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image248} \end{center}
+
+\href{images/image248.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  In the resulting window, as shown below, select the SDMX Registry (which will be LOCAL\_REGISTRY in this case). Then click on Load, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image249} \end{center}
+
+\href{images/image249.png}{Click here to enlarge the image}
+
+The concepts will be visible in the CONCEPT POOL, as shown below.
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image250} \end{center}
+
+\href{images/image250.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Drag and drop the concepts from the CONCEPT POOL to either the DIMENSION or the ATTRIBUTE pane on the right. For our example data, except for the Unit of Measurement, which will go to the ATTRIBUTE pane, all other concepts will be in the DIMENSION pane, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image251} \end{center}
+
+\href{images/image251.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Note that by default, SDMX Constructor has preselected TIME DIMENSION and PRIMARY MEASURE on the right pane. However, ensure that the ConceptScheme fields in both are set to the same (DEMOLAND\_NSO:CS\_DEMOLAND\_NSO(1.0)) as other dimensions. Double-clicking the TIME DIMENSION will open up the pop-up window where it can be specified, as shown below. Click Apply.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image252} \end{center}
+
+\href{images/image252.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Repeat the same for the PRIMARY MEASURE as shown below. Click Apply.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image253} \end{center}
+
+\href{images/image253.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Fill in the details for the DSD (ID = DSD\_DEMOLAND\_NSO, AgencyID = DEMOLAND\_NSO, Version = 1.0 and Name = Concept Scheme for the Demoland NSO) as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image254} \end{center}
+
+\href{images/image254.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Clicking on the Export/Save button, as shown below, will open up a pop-up window where you can make the following adjustments: Use Local ConceptScheme - turn it off; output Codelists - turn it off and Output ConceptSchemes - turn it off.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image255} \end{center}
+
+\href{images/image255.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Clicking on Run will show the following message. Click on Yes.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image256} \end{center}
+
+\href{images/image256.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  You will see a message confirming the creation of the DSD, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image257} \end{center}
+
+\href{images/image257.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  After that, you will see the XML file created if you go to the file's location.
+\end{itemize}
+
+Creating Dataflow
+
+\begin{itemize}
+\tightlist
+\item
+  Click on the Dataflow button in the Editor menu and ensure that the folder we created before, LOCAL\_REGISTRY, is selected from the `Load from registry' dropdown option, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image258} \end{center}
+
+\href{images/image258.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  For this example of Dataflow, we will select `Table 4.1: Unemployment Rate by sex and region'. We will first enter the details (ID = DF\_UNER\_SEX\_GEO, AgencyID = DEMOLAND\_NSO, Version = 1.0 and Name: Unemployment Rate (UNER) by sex and region) as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image259} \end{center}
+
+\href{images/image259.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Then click on the Annotation button. After that, click on Standard Types in the pop-up window. Then select the LAYOUT\_COLUMN and LAYOUT\_ROW from the list. Finally, click on the Add button, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image260} \end{center}
+
+\href{images/image260.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  You will see the following window.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image261} \end{center}
+
+\href{images/image261.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Select the LAYOUT\_COLUMN. Then click in the Title column field. Then click on the Select Items button. Then following the layout scheme of Table 4.1, select the items for LAYOUT\_COLUMN: as SEX and TIME\_PERIOD. Finally, click on the Insert button.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image262} \end{center}
+
+\href{images/image262.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Repeat the same for the LAYOUT\_ROW. Click inside the corresponding field of the column `Title', then click on the Select Items button. Then select GEO (as per Table 4.1) and click on the Insert button.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image263} \end{center}
+
+\href{images/image263.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  This is how it would look after both entries.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image264} \end{center}
+
+\href{images/image264.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Clicking on the Save button will result in the following confirmation.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image265} \end{center}
+
+\href{images/image265.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Click OK. It will now show the 2 annotation notifications as highlighted below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image266} \end{center}
+
+\href{images/image266.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Now, in the DSD Allocation pane, in the Associated DSD dropdown, select the DSD on which this Dataflow will be based. We selected the DSD we created before - DEMOLAND\_NSO:DSD\_DEMOLAND\_NSO(1.0).
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image267} \end{center}
+
+\href{images/image267.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Now click on the Export/Save button, as shown below and click on Save.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image268} \end{center}
+
+\href{images/image268.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  It will show a message as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image269} \end{center}
+
+\href{images/image269.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Clicking on Yes will show a message indicating that the XML file (containing the Dataflow) has been created.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image270} \end{center}
+
+\href{images/image270.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  After that, you will see the XML file created if you go to the file's location.
+\end{itemize}
+
+Creating ContentConstraint
+
+\begin{itemize}
+\tightlist
+\item
+  Click on the ContentConstraint button in the Editor menu and ensure that the folder we created before, LOCAL\_REGISTRY, is selected from the `Load from registry' dropdown option, as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image271} \end{center}
+
+\href{images/image271.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Fill in the details for the ContentConstraint (ID = CC\_UNER\_SEX\_GEO, AgencyID = DEMOLAND\_NSO, Version = 1.0 and Name = Unemployment Rate (UNER) by sex and region) as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image272} \end{center}
+
+\href{images/image272.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Then in the ConstraintAttachment pane, in the Attachment Type, select the Dataflow option and from the dropdown list underneath, select the relevant dataflow as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image273} \end{center}
+
+\href{images/image273.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Then click the append (or +) button to add the required rows.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image274} \end{center}
+
+\href{images/image274.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  We add two rows. In the first row, we select the concept `Indicator' and the value as UNER (for Unemployment Rate). In the second row, we select the concept `UNIT\_Measure' (for Unit of Measurement) and the value as RT (for Rate), as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image275} \end{center}
+
+\href{images/image275.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  Now click on the Export/Save button, as shown below and click on Save in the resulting window.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image276} \end{center}
+
+\href{images/image276.png}{Click here to enlarge the image}
+
+\begin{itemize}
+\tightlist
+\item
+  It will show a message as shown below.
+\end{itemize}
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image277} \end{center}
+
+\href{images/image277.png}{Click here to enlarge the image}
+
+Clicking on Yes will show a message in the bottom right-hand corner indicating that the XML file is created.
+
+\begin{center}\includegraphics[width=1\linewidth]{./images/image278} \end{center}
+
+\href{images/image278.png}{Click here to enlarge the image}
+
+After that, you will see the XML file created if you go to the file's location.
+
+\textbf{The Table Modeller approach}
+
+In SDMX Constructor, the Table Modeller feature (Under special topics, the functionality of the \protect\hyperlink{table-modeller}{Table Modeller} is detailed) provides an intuitive user interface for designing statistical tables and generating the corresponding SDMX artefacts in one go.
+
+Recalling our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:table42}), we will now generate DSDs, ContentConstraints and Dataflows. We can create all these artefacts through the Table Modeller option in the SDMX Constructor.
 
 \begin{itemize}
 \tightlist
@@ -1395,7 +1828,9 @@ Recalling our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:t
 
 A CategoryScheme groups similar objects based on shared characteristics, providing a hierarchical structure that helps classify and organise data and metadata meaningfully.
 
-Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:table42}), we will create a CategoryScheme using the Table Modeller option in the SDMX Constructor. The categorisation could be by topics such as `Unemployment Rate' and `Population outside the labour force'.
+It is crucial to distinguish between topics and specific indicators within those topics. For instance, in this user manual, we have used two indicators as examples: `Unemployment Rate by sex and region' and `Population outside the labour force by sex and age group.' Although these indicators focus on different aspects, they both fall under the broader topic of the Labour force.
+
+Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab:table42}), we will create a CategoryScheme in the SDMX Constructor. The categorisation would be by the topic `Labour force'.
 
 \begin{itemize}
 \tightlist
@@ -1420,7 +1855,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  It will open a pop-up window, as shown below. Enter the details: ID: UNER (shorthand for Unemployment Rate) and Name: Unemployment Rate.
+  It will open a pop-up window, as shown below. Enter the details: ID: LF (shorthand for Labour force), Name: Labour force and Description: The labour force is the sum of the number of persons employed and the number of persons unemployed.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image164} \end{center}
@@ -1430,7 +1865,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Click on the Load ``Dataflows'' button, as shown below.
+  Click on the Load ``Dataflows'' button, as shown below. It will open another pop-up window to select the dataflows through the Registry.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image166} \end{center}
@@ -1440,7 +1875,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  It will open another pop-up window to select the dataflow through the Registry.
+  Select the Registry (LOCAL\_REGISTRY), then the dataflows, and press Apply as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image168} \end{center}
@@ -1450,7 +1885,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Select the Registry (LOCAL\_REGISTRY), then the dataflow, and press Apply as shown below.
+  The resulting window will show the two dataflows in the dataflow pool, as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image170} \end{center}
@@ -1460,7 +1895,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  A message will appear as shown below.
+  Select both the dataflows and move (by dragging and dropping) to the Attached Dataflows pane on the right, as shown below. Click on Apply.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image172} \end{center}
@@ -1470,7 +1905,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Clicking the OK button will lead you to the following window.
+  Clicking ``Apply'' in the previous step will take you to the following window, showing the entry into the CATEGORY POOL.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image174} \end{center}
@@ -1480,7 +1915,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  As shown below, move (dragging and dropping) the dataflow to the `attached dataflows' space.
+  Move it to the right pane, as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image176} \end{center}
@@ -1490,7 +1925,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Clicking ``Apply'' in that pop-up will take you to the following window, showing the entry into the CATEGORY POOL.
+  Then hit Save (Save without descendants), and it will show the pop-up windows to ensure the location where it saves the file, as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image178} \end{center}
@@ -1500,7 +1935,7 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Move it to the right pane, as shown below.
+  Clicking on Save will ask the confirmation to merge the file. Select Yes.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image180} \end{center}
@@ -1510,34 +1945,12 @@ Referencing our two initial tables (Table: \ref{tab:table41} and Table: \ref{tab
 \begin{itemize}
 \tightlist
 \item
-  Then hit Save (Save without descendants), and it will show the pop-up windows to ensure the location where it saves the file, as shown below.
+  The XML file (by going to the location of the folder we created before and opening the XML file) would be like the one below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image182} \end{center}
 
 \href{images/image182.png}{Click here to enlarge the image}
-
-\begin{itemize}
-\tightlist
-\item
-  Clicking on Save will ask the confirmation to merge the file. Select Yes.
-\item
-  Repeat the process for the other category, `Population outside the labour force'. The final view would be as follows:
-\end{itemize}
-
-\begin{center}\includegraphics[width=1\linewidth]{./images/image184} \end{center}
-
-\href{images/image184.png}{Click here to enlarge the image}
-
-\begin{itemize}
-\tightlist
-\item
-  The XML file (by going to the location of the folder we created before and opening the XML file) would be like the one below.
-\end{itemize}
-
-\begin{center}\includegraphics[width=1\linewidth]{./images/image186} \end{center}
-
-\href{images/image186.png}{Click here to enlarge the image}
 
 \hypertarget{uploading-xml}{%
 \section{Uploading XML file to the DLM}\label{uploading-xml}}
@@ -1591,7 +2004,7 @@ You can upload the XML file containing the SDMX artefacts to the .Stat Data Life
 \begin{itemize}
 \tightlist
 \item
-  Select the XML file we created before from the folder as shown below.
+  Select the XML file we created before from the folder as shown below. (Note that the LocalRegistry.xml file can be uploaded at once and may contain multiple artefacts.)
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image196} \end{center}
@@ -1651,7 +2064,7 @@ You can upload the XML file containing the SDMX artefacts to the .Stat Data Life
 \hypertarget{connecting-to}{%
 \section{Connecting to an SDMX registry}\label{connecting-to}}
 
-SDMX Constructor can also connect to a new SDMX registry (such as .Stat DLM) directly, and users can directly pull or push (perhaps after editing) artefacts from the SDMX Constructor.
+SDMX Constructor can also connect to a new SDMX registry (note: DLM is not a registry; .Stat Suite is. The DLM is composed of a set of back-office modules as one of the major components of the .Stat Suite that combines all data lifecycle management activities into one user interface.) directly, and users can directly pull or push (perhaps after editing) (with authentication credentials) artefacts from the SDMX Constructor.
 
 \begin{itemize}
 \tightlist
@@ -1676,7 +2089,7 @@ SDMX Constructor can also connect to a new SDMX registry (such as .Stat DLM) dir
 \begin{itemize}
 \tightlist
 \item
-  Change the default values for Registry Name and Base URL. For Registry Name, you can choose a name of your choice. For example, Registry Name is DLM, and for the Base URL, the localhost configuration is already specified (by default, it will be \url{http://127.0.0.1/rest/}).
+  Change the default values for Registry Name and Base URL. For Registry Name, you can choose a name of your choice. For example, Registry Name could be DLM, and for the Base URL, the localhost configuration is already specified (by default, it will be \url{http://127.0.0.1/rest/}).
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image212} \end{center}
