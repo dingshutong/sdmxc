@@ -80,7 +80,7 @@
 
 \title{SDMX Constructor: User Manual}
 \author{International Labour Organization: Department of Statistics}
-\date{2023-06-12}
+\date{2023-06-21}
 
 \begin{document}
 \maketitle
@@ -933,9 +933,9 @@ A ConceptScheme provides a standardised and harmonised way of defining relevant 
 
 When Concepts represent a statistical categorical variable (or qualitative variable), they can take on one of a limited and fixed number of possible values. In such a case, the concept is ``enumerated'', and its representation is given by a Codelist that contains the valid values that the concept can take on and its meaning. For example, in a dataset on population demographics, the code list for the concept of sex might include codes such as Men, Women, and Both Sexes (Total).
 
-\textbf{Create Codelist: The ``one by one'' approach.}
+\textbf{The ``one by one'' approach.}
 
-We can create a Concept Scheme in SDMX Consctuctor by following the steps described below. This section describes the one-by-one entry approach that is also possible, though the subsequent section illustrates the bulk load feature in detail.
+We can create a Concept Scheme in SDMX Consctuctor by following the steps described below. This section describes the one-by-one entry approach. The subsequent section illustrates the bulk load feature in detail.
 
 \begin{itemize}
 \tightlist
@@ -960,7 +960,7 @@ We can create a Concept Scheme in SDMX Consctuctor by following the steps descri
 \begin{itemize}
 \tightlist
 \item
-  Provide the details as per the template. As an example, we choose the concept of `indicator'. Hence we could use ID = INDICATOR and Name = Indicator. For Description, we could use `Refers to statistical measure describing a particular aspect of a social, economic or environmental phenomenon'. We could keep the checkmark to add the code list (this would allow us to add the code list in the same interface), as shown below.
+  Provide the details as per the template. As an example, we choose the concept of `indicator'. Hence we could use ID = INDICATOR and Name = Indicator. For Description, we could use `Refers to statistical measure describing a particular aspect of a social, economic or environmental phenomenon' as shown below. We could keep the checkmark to add the code list (this would allow us to add the code list in the same interface).
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image241} \end{center}
@@ -1013,7 +1013,7 @@ We can create a Concept Scheme in SDMX Consctuctor by following the steps descri
 \begin{itemize}
 \tightlist
 \item
-  After creating all the concepts and related code lists, you can see all the concepts in the CONCEPT POOL, as shown below.
+  After creating all the concepts and related code lists (based on the Table 4.1 and 4.2), you can see all the concepts in the CONCEPT POOL, as shown below.
 \end{itemize}
 
 \begin{center}\includegraphics[width=1\linewidth]{./images/image112} \end{center}
@@ -1090,7 +1090,7 @@ We can create a Concept Scheme in SDMX Consctuctor by following the steps descri
 
 \href{images/image129.png}{Click here to enlarge the image}
 
-\textbf{Create Codelist: Bulk load.}
+\textbf{The ``Bulk load'' approach}
 
 To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Constructor by following these steps. First, upload the Code List and then the ConceptScheme. By completing these steps in sequence, you can create both artefacts in one go.
 
@@ -1183,8 +1183,6 @@ To create multiple Codelists and ConceptSchemes at once, you can use the SDMX Co
 \begin{center}\includegraphics[width=1\linewidth]{./images/image098} \end{center}
 
 \href{images/image098.png}{Click here to enlarge the image}
-
-\textbf{Create ConceptScheme:}
 
 \begin{itemize}
 \tightlist
